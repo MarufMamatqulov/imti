@@ -1,36 +1,93 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# IMTI — Ijtimoiy-Ma'naviy Tadqiqotlar Instituti
 
-## Getting Started
+Respublika Ma'naviyat va Ma'rifat Markazi huzuridagi Ijtimoiy-Ma'naviy Tadqiqotlar
+Instituti uchun tayyorlangan, to'liq frontendga asoslangan zamonaviy institutsional veb-sayt.
 
-First, run the development server:
+Sayt [academy.uz](https://academy.uz/uz) uslubidan ilhomlanib, institut, xizmatlar, yangiliklar,
+ilmiy nashrlar, hujjatlar, galereya va aloqa bo'limlarini o'z ichiga olgan holda qurilgan.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Texnologiyalar
+
+- **Next.js 16** (App Router, static export uchun to'liq mos)
+- **TypeScript**
+- **Tailwind CSS v4**
+- **Framer Motion** — skroll animatsiyalari
+- **lucide-react** — ikonalar
+
+Barcha ma'lumotlar (`src/data/*.ts`) frontendning o'zida saqlanadi — backend yoki
+ma'lumotlar bazasi talab qilinmaydi. Kelajakda haqiqiy backend/CMS ulanganda, shu
+`src/data` fayllaridagi funksiyalarni (masalan, `getLatestNews`) API chaqiruvlariga
+almashtirish kifoya.
+
+## Loyiha tuzilmasi
+
+```
+src/
+  app/                  # Sahifalar (App Router)
+    institut/           # Institut haqida, rahbariyat, tuzilma, vakansiya
+    faoliyat/           # Faoliyat yo'nalishlari
+    ilmiy-faoliyat/     # Ilmiy loyihalar
+    yangiliklar/        # Yangiliklar ro'yxati va [slug] sahifasi
+    nashrlar/           # Elektron kutubxona
+    hujjatlar/          # Normativ-huquqiy hujjatlar
+    galereya/           # Foto galereya
+    aloqa/              # Murojaat shakli va xarita
+  components/           # UI va sahifaga xos komponentlar
+  data/                 # Barcha statik kontent (yangilik, xizmat, hujjat va h.k.)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Ishga tushirish
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm install
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Sayt `http://localhost:3000` manzilida ochiladi.
 
-## Learn More
+Build va production tekshiruvi uchun:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run build
+npm run start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Vercelda joylashtirish (deploy)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Loyiha Vercel uchun maxsus sozlashsiz ham to'liq tayyor (`vercel.json` shart emas):
 
-## Deploy on Vercel
+1. Loyihani GitHub/GitLab/Bitbucket'ga yuklang (`git init`, `git add`, `git commit`, `git push`).
+2. [vercel.com](https://vercel.com) da **Add New → Project** tugmasini bosing va repozitoriyani tanlang.
+3. Framework sifatida Vercel avtomatik ravishda **Next.js**ni aniqlaydi — qo'shimcha sozlash shart emas.
+4. **Deploy** tugmasini bosing. Bir necha daqiqada sayt jonli havolaga ega bo'ladi.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Yoki Vercel CLI orqali to'g'ridan-to'g'ri joylashtirish:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm install -g vercel
+vercel        # birinchi marta sozlash
+vercel --prod # production'ga chiqarish
+```
+
+## Kontentni yangilash
+
+- **Rahbariyat ma'lumotlari** hozircha namunaviy (`src/data/leadership.ts`) — saytni
+  ishga tushirishdan oldin haqiqiy F.I.Sh., lavozim va rasm bilan almashtiring.
+- **Rasmlar**: hozirda `picsum.photos` orqali vaqtinchalik (placeholder) tasvirlar
+  ishlatilgan. Haqiqiy sayt uchun institutning o'z fotosuratlarini `public/` papkasiga
+  joylashtirib, tegishli `src/data/*.ts` fayllaridagi `image`/`photo`/`cover`
+  maydonlarini shu fayllarga yo'naltiring.
+- **Yangiliklar, nashrlar, hujjatlar, vakansiyalar** — mos `src/data/*.ts` fayliga
+  yangi obyekt qo'shish orqali yangilanadi, sahifalar avtomatik yangi kontentni chiqaradi.
+- **Aloqa formasi** hozircha faqat frontendda ishlaydi (real yuborish logikasi yo'q).
+  Uni ishga tushirish uchun `src/components/contact/ContactForm.tsx` ichida `handleSubmit`
+  funksiyasini real API/E-mail xizmati (masalan, Formspree, EmailJS yoki o'z backend
+  endpoint'ingiz) bilan bog'lang.
+
+## Domen va SEO
+
+- `src/app/sitemap.ts` va `src/app/robots.ts` avtomatik generatsiya qilinadi va
+  `src/data/site.ts` dagi `domain` maydonidan foydalanadi.
+- Haqiqiy domen aniq bo'lgach, faqat `src/data/site.ts` dagi `domain` qiymatini
+  o'zgartiring — u butun sayt bo'ylab (metadata, sitemap, robots) qo'llanadi.
+- Telefon, manzil va ijtimoiy tarmoq havolalari ham shu faylda joylashgan.
