@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 const infoCards = [
   { icon: MapPin, label: "Manzil", value: SITE.address },
-  { icon: Phone, label: "Telefon", value: `${SITE.phone} / ${SITE.phoneSecondary}` },
+  { icon: Phone, label: "Telefon", value: SITE.phone },
   { icon: Mail, label: "Elektron pochta", value: SITE.email },
   { icon: Clock, label: "Ish vaqti", value: SITE.workHours },
 ];

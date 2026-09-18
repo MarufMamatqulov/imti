@@ -1,6 +1,8 @@
-// Eslatma: quyidagi rahbariyat ma'lumotlari namunaviy (placeholder) tarzda
-// kiritilgan. Saytni ishga tushirishdan oldin haqiqiy F.I.Sh., lavozim va
-// qabul kunlari bilan almashtiring.
+// Manba: ochiq OAV va yuridik ma'lumotlar (yuz.uz, oyina.uz, norma.uz) —
+// Muhammadjon Quronov 2026-yil 20-avgustdan Institut direktori etib
+// tayinlangan (avvalgi direktor Olim Davlatov Prezident maslahatchisi
+// lavozimiga o'tkazilgan). Institut boshqa rahbariyat a'zolari (o'rinbosarlar)
+// hozircha saytga qo'shilmagan — tasdiqlangan ma'lumotlar kelgach to'ldiriladi.
 export type LeadershipMember = {
   slug: string;
   fullName: string;
@@ -15,32 +17,12 @@ export type LeadershipMember = {
 export const LEADERSHIP: LeadershipMember[] = [
   {
     slug: "direktor",
-    fullName: "F.I.Sh. kiritiladi",
+    fullName: "Quronov Muhammadjon",
     position: "Institut direktori",
-    bio: "Institut faoliyatiga umumiy rahbarlik qiladi, strategik yo'nalishlarni belgilaydi va davlat organlari, xalqaro tashkilotlar bilan hamkorlikni muvofiqlashtiradi.",
-    receptionDay: "Har oyning 1- va 3- seshanba kunlari, 14:00–17:00",
-    phone: "+998 71 233 45 67",
-    email: "direktor@imti.uz",
-    photo: "https://picsum.photos/seed/imti-leader1/400/480",
-  },
-  {
-    slug: "ilmiy-ishlar-orinbosari",
-    fullName: "F.I.Sh. kiritiladi",
-    position: "Direktor o'rinbosari — ilmiy ishlar bo'yicha",
-    bio: "Ilmiy-tadqiqot loyihalari, nashriyot faoliyati va ilmiy kengash ishini boshqaradi.",
-    receptionDay: "Har chorshanba, 10:00–13:00",
-    phone: "+998 71 233 45 69",
-    email: "ilmiy@imti.uz",
-    photo: "https://picsum.photos/seed/imti-leader2/400/480",
-  },
-  {
-    slug: "marifiy-ishlar-orinbosari",
-    fullName: "F.I.Sh. kiritiladi",
-    position: "Direktor o'rinbosari — ma'rifiy-tashkiliy ishlar bo'yicha",
-    bio: "Ma'rifiy-tarbiyaviy tadbirlar, hududlar bilan ishlash va targ'ibot loyihalarini muvofiqlashtiradi.",
-    receptionDay: "Har payshanba, 10:00–13:00",
-    phone: "+998 71 233 45 70",
-    email: "marifat@imti.uz",
-    photo: "https://picsum.photos/seed/imti-leader3/400/480",
+    bio: "Pedagogika fanlari doktori, professor. 2026-yil 20-avgust sanasidan Respublika Ma'naviyat va Ma'rifat markazi huzuridagi Ijtimoiy-Ma'naviy Tadqiqotlar Instituti direktori lavozimida faoliyat yuritmoqda. Ilgari markaz direktorining ilmiy-nazariy va uslubiy masalalar bo'yicha birinchi o'rinbosari sifatida ishlagan.",
+    receptionDay: "Oldindan yozilish asosida",
+    phone: "+998 55 510 27 37",
+    email: "info@manaviyat.uz",
+    photo: "/director-quronov-muhammadjon.png",
   },
 ];

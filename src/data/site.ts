@@ -1,3 +1,10 @@
+// Eslatma: quyidagi ma'lumotlar ochiq manbalar (Vazirlar Mahkamasining
+// 03.06.2021-yildagi 340-son qarori, norma.uz, gazeta.uz, manaviyat.uz va
+// boshqa rasmiy/OAV manbalari) asosida yozilgan. Institutning o'z alohida
+// telefon/email raqami ochiq manbalarda topilmagani sababli, aloqa
+// ma'lumotlari sifatida qarashli tashkilot — Respublika Ma'naviyat va
+// Ma'rifat Markazining rasmiy (manaviyat.uz) kontaktlari keltirilgan.
+// Institut o'zining alohida raqami/emailiga ega bo'lsa, shu yerda almashtiring.
 export const SITE = {
   domain: "https://imti.uz",
   shortName: "IMTI",
@@ -6,23 +13,21 @@ export const SITE = {
   parentOrg: "Respublika Ma'naviyat va Ma'rifat Markazi",
   tagline: "Ma'naviyat ilm bilan, jamiyat tadqiqot bilan mustahkam",
   description:
-    "Ijtimoiy-Ma'naviy Tadqiqotlar Instituti — jamiyatda ma'naviy-ma'rifiy muhitni tadqiq etuvchi, ilmiy-tahliliy xulosalar va amaliy tavsiyalar ishlab chiquvchi yetakchi ilmiy-tadqiqot muassasasi.",
-  founded: 2019,
-  address: "100060, Toshkent shahri, Mustaqillik ko'chasi, 5-uy",
-  phone: "+998 71 233 45 67",
-  phoneSecondary: "+998 71 233 45 68",
-  email: "info@imti.uz",
-  pressEmail: "matbuot@imti.uz",
+    "Ijtimoiy-Ma'naviy Tadqiqotlar Instituti — Vazirlar Mahkamasining 2021-yil 3-iyundagi 340-son qarori bilan tashkil etilgan, jamiyatdagi ijtimoiy-ma'naviy muhitni ilmiy asosda tadqiq etuvchi, zamonaviy targ'ibot texnologiya va usullarini ishlab chiquvchi, aholining, ayniqsa yoshlarning mafkuraviy immunitetini mustahkamlashga xizmat qiluvchi ilmiy-tadqiqot muassasasi.",
+  founded: 2021,
+  address: "Toshkent shahri, Yakkasaroy tumani, Bobur ko'chasi, 9-uy, 3-qavat",
+  phone: "+998 55 510 27 37",
+  email: "info@manaviyat.uz",
   workHours: "Dushanba – Juma, 09:00 – 18:00",
   socials: {
-    telegram: "https://t.me/imti_uz",
-    facebook: "https://facebook.com/imti.uz",
-    instagram: "https://instagram.com/imti.uz",
-    youtube: "https://youtube.com/@imti_uz",
-    x: "https://x.com/imti_uz",
+    telegram: "https://t.me/manaviyat_markaz",
+    facebook: "https://fb.com/manaviyat.uz",
+    instagram: "https://instagram.com/manaviyat_markaz",
+    youtube: "https://www.youtube.com/@respublikamanaviyatvamarif2968",
+    x: "https://x.com/manaviyat_uz",
   },
   mapEmbedSrc:
-    "https://www.google.com/maps?q=Mustaqillik+ko%27chasi+5,+Toshkent&output=embed",
+    "https://www.google.com/maps?q=Bobur+ko%27chasi+9,+Yakkasaroy,+Toshkent&output=embed",
 } as const;
 
 export const LANGUAGES = [
