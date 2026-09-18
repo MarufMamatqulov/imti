@@ -1,5 +1,5 @@
 // Eslatma: quyidagi ma'lumotlar ochiq manbalar (Vazirlar Mahkamasining
-// 03.06.2021-yildagi 340-son qarori, norma.uz, gazeta.uz, manaviyat.uz va
+// 03.06.2021-yildagi 340-son qarori, norma.uz, gazeta.uz, manaviyat.uz va cvc
 // boshqa rasmiy/OAV manbalari) asosida yozilgan. Institutning o'z alohida
 // telefon/email raqami ochiq manbalarda topilmagani sababli, aloqa
 // ma'lumotlari sifatida qarashli tashkilot — Respublika Ma'naviyat va
