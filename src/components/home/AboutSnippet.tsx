@@ -5,6 +5,7 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import Button from "@/components/ui/Button";
 import Reveal from "@/components/ui/Reveal";
 import { ArrowRight } from "lucide-react";
+import { SITE } from "@/data/site";
 
 const points = [
   "Jamiyatdagi ma'naviy-ma'rifiy jarayonlarni ilmiy asosda tadqiq etish",
@@ -19,7 +20,7 @@ export default function AboutSnippet() {
       <Container className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
         <Reveal>
           <div className="relative">
-            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl shadow-[0_20px_60px_rgba(10,31,77,0.15)]">
+            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-md border border-line">
               <Image
                 src="https://picsum.photos/seed/imti-about/1000/760"
                 alt="Institut ilmiy kengashi majlisi"
@@ -28,9 +29,9 @@ export default function AboutSnippet() {
                 className="object-cover"
               />
             </div>
-            <div className="absolute -bottom-8 -right-6 sm:-right-10 w-52 rounded-2xl bg-primary-950 text-white p-5 shadow-2xl">
-              <p className="text-xs uppercase tracking-wider text-accent-400 font-bold">Tashkil etilgan</p>
-              <p className="text-2xl font-extrabold mt-1">2019-yil</p>
+            <div className="absolute -bottom-8 -right-6 sm:-right-10 w-52 rounded-md bg-primary-950 text-white p-5">
+              <p className="text-xs uppercase tracking-wider text-primary-300 font-bold">Tashkil etilgan</p>
+              <p className="text-2xl font-extrabold mt-1">{SITE.founded}-yil</p>
               <p className="text-xs text-white/60 mt-1">Respublika miqyosida faoliyat yuritadi</p>
             </div>
           </div>
@@ -45,7 +46,7 @@ export default function AboutSnippet() {
           <ul className="mt-7 space-y-3.5">
             {points.map((point) => (
               <li key={point} className="flex items-start gap-3">
-                <CheckCircle2 className="h-5 w-5 text-emerald-accent shrink-0 mt-0.5" />
+                <CheckCircle2 className="h-5 w-5 text-primary-700 shrink-0 mt-0.5" />
                 <span className="text-sm sm:text-[15px] text-slate-600 leading-relaxed">{point}</span>
               </li>
             ))}

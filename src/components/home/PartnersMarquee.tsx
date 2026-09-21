@@ -19,9 +19,9 @@ export default function PartnersMarquee() {
           {loop.map((partner, i) => (
             <div
               key={`${partner.name}-${i}`}
-              className="flex items-center gap-3 rounded-xl border border-slate-100 bg-slate-50 px-5 py-3.5 min-w-[260px]"
+              className="flex items-center gap-3 rounded-md border border-line bg-white px-5 py-3.5 min-w-[260px]"
             >
-              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary-900 text-white">
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded bg-primary-900 text-white">
                 <Handshake className="h-4 w-4" />
               </span>
               <div>

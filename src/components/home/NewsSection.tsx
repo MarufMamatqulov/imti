@@ -36,7 +36,7 @@ export default function NewsSection() {
         <Reveal>
           <Link
             href={`/yangiliklar/${featured.slug}`}
-            className="group grid grid-cols-1 md:grid-cols-2 gap-0 overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-[0_2px_4px_rgba(16,24,40,0.04)] hover:shadow-[0_24px_60px_rgba(10,31,77,0.14)] transition-all duration-300 mb-6"
+            className="group grid grid-cols-1 md:grid-cols-2 gap-0 overflow-hidden rounded-md border border-line bg-white hover:border-primary-300 transition-colors duration-300 mb-6"
           >
             <div className="relative aspect-[16/10] md:aspect-auto overflow-hidden">
               <Image
@@ -44,9 +44,9 @@ export default function NewsSection() {
                 alt={featured.title}
                 fill
                 sizes="(min-width: 768px) 50vw, 100vw"
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                className="object-cover"
               />
-              <span className="absolute left-4 top-4 rounded-full bg-white/90 backdrop-blur px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-primary-700">
+              <span className="absolute left-4 top-4 rounded bg-primary-950/85 px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-white">
                 {featured.category}
               </span>
             </div>

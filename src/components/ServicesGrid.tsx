@@ -7,11 +7,11 @@ export default function ServicesGrid({ compact = false }: { compact?: boolean })
   const items = compact ? SERVICES.slice(0, 6) : SERVICES;
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-line border border-line rounded-md overflow-hidden">
       {items.map((service, i) => (
         <Reveal key={service.slug} delay={(i % 3) * 0.08}>
-          <div className="group relative h-full rounded-2xl border border-slate-100 bg-white p-7 shadow-[0_2px_4px_rgba(16,24,40,0.04)] hover:shadow-[0_20px_48px_rgba(10,31,77,0.12)] hover:-translate-y-1 transition-all duration-300">
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary-50 text-primary-700 group-hover:bg-primary-800 group-hover:text-white transition-colors duration-300">
+          <div className="group relative h-full bg-white p-7 hover:bg-primary-50/40 transition-colors duration-200">
+            <div className="flex h-12 w-12 items-center justify-center rounded-md bg-primary-50 text-primary-700 group-hover:bg-primary-800 group-hover:text-white transition-colors duration-300">
               <Icon name={service.icon} className="h-6 w-6" />
             </div>
             <h3 className="mt-5 text-lg font-bold text-primary-950 leading-snug">{service.title}</h3>
@@ -21,7 +21,7 @@ export default function ServicesGrid({ compact = false }: { compact?: boolean })
             <ul className="mt-4 space-y-1.5">
               {service.points.slice(0, compact ? 2 : 3).map((point) => (
                 <li key={point} className="flex items-start gap-2 text-xs text-slate-500">
-                  <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-accent-500" />
+                  <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-primary-600" />
                   {point}
                 </li>
               ))}

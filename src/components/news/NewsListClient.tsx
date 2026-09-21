@@ -25,10 +25,10 @@ export default function NewsListClient() {
             key={cat}
             onClick={() => setActive(cat)}
             className={clsx(
-              "rounded-full px-4 py-2 text-sm font-semibold transition-colors border",
+              "rounded-sm px-4 py-2 text-sm font-semibold transition-colors border",
               active === cat
                 ? "bg-primary-900 text-white border-primary-900"
-                : "bg-white text-slate-600 border-slate-200 hover:border-primary-300 hover:text-primary-700"
+                : "bg-white text-slate-600 border-line hover:border-primary-300 hover:text-primary-700"
             )}
           >
             {cat}

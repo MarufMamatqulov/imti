@@ -5,11 +5,9 @@ import Button from "@/components/ui/Button";
 
 export default function NotFound() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-primary-950 via-primary-900 to-primary-950 text-white min-h-[70vh] flex items-center">
-      <div className="absolute inset-0 bg-grid opacity-30" />
-      <div className="absolute -top-24 -right-16 h-72 w-72 rounded-full bg-accent-500/10 blur-3xl" />
-      <Container className="relative text-center py-20">
-        <p className="text-7xl sm:text-8xl font-extrabold text-accent-400/90">404</p>
+    <section className="bg-primary-950 text-white min-h-[70vh] flex items-center">
+      <Container className="text-center py-20">
+        <p className="text-7xl sm:text-8xl font-extrabold text-primary-300">404</p>
         <h1 className="mt-4 text-2xl sm:text-3xl font-extrabold text-balance">
           Kechirasiz, siz izlagan sahifa topilmadi
         </h1>

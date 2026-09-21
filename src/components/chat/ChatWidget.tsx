@@ -87,8 +87,8 @@ export default function ChatWidget() {
         onClick={() => setOpen((v) => !v)}
         aria-label={open ? "Chatni yopish" : "AI yordamchi bilan suhbat"}
         className={clsx(
-          "fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full shadow-[0_10px_30px_rgba(34,96,224,0.45)] transition-all duration-200 hover:-translate-y-0.5",
-          "bg-primary-600 text-white hover:bg-primary-700",
+          "fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full shadow-soft transition-colors duration-200",
+          "bg-primary-700 text-white hover:bg-primary-800",
           "sm:bottom-6 sm:right-6"
         )}
       >
@@ -96,7 +96,7 @@ export default function ChatWidget() {
       </button>
 
       {open && (
-        <div className="fixed bottom-24 right-5 z-50 flex h-[min(600px,calc(100vh-140px))] w-[min(380px,calc(100vw-2.5rem))] flex-col overflow-hidden rounded-2xl border border-primary-100 bg-white shadow-card sm:bottom-28 sm:right-6">
+        <div className="fixed bottom-24 right-5 z-50 flex h-[min(600px,calc(100vh-140px))] w-[min(380px,calc(100vw-2.5rem))] flex-col overflow-hidden rounded-md border border-line bg-white shadow-soft sm:bottom-28 sm:right-6">
           <div className="flex items-center gap-3 bg-primary-900 px-4 py-4 text-white">
             <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/10">
               <Bot className="h-5 w-5" />
@@ -121,10 +121,10 @@ export default function ChatWidget() {
               <div key={i} className={clsx("flex", m.role === "user" ? "justify-end" : "justify-start")}>
                 <div
                   className={clsx(
-                    "max-w-[85%] whitespace-pre-wrap rounded-2xl px-4 py-2.5 text-sm leading-relaxed",
+                    "max-w-[85%] whitespace-pre-wrap rounded-md px-4 py-2.5 text-sm leading-relaxed",
                     m.role === "user"
-                      ? "rounded-br-sm bg-accent-400 text-primary-950"
-                      : "rounded-bl-sm bg-primary-50 text-primary-950"
+                      ? "bg-primary-700 text-white"
+                      : "bg-primary-50 text-primary-950"
                   )}
                 >
                   {m.content || (
@@ -151,13 +151,13 @@ export default function ChatWidget() {
               }}
               rows={1}
               placeholder="Savolingizni yozing..."
-              className="max-h-28 flex-1 resize-none rounded-xl border border-slate-200 px-3 py-2.5 text-sm outline-none transition-colors focus:border-primary-400 focus:ring-2 focus:ring-primary-100"
+              className="max-h-28 flex-1 resize-none rounded-md border border-line px-3 py-2.5 text-sm outline-none transition-colors focus:border-primary-400 focus:ring-2 focus:ring-primary-100"
             />
             <button
               type="submit"
               disabled={isStreaming || !input.trim()}
               aria-label="Yuborish"
-              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary-600 text-white transition-colors hover:bg-primary-700 disabled:opacity-40"
+              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-primary-700 text-white transition-colors hover:bg-primary-800 disabled:opacity-40"
             >
               {isStreaming ? <Loader2 className="h-4 w-4 animate-spin" /> : <Send className="h-4 w-4" />}
             </button>

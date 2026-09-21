@@ -14,10 +14,7 @@ export default function PageHeader({
   crumbs: { label: string; href?: string }[];
 }) {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-primary-950 via-primary-900 to-primary-950 text-white py-14 sm:py-20">
-      <div className="absolute inset-0 bg-grid opacity-30" />
-      <div className="absolute -top-24 -right-16 h-72 w-72 rounded-full bg-accent-500/10 blur-3xl" />
-      <div className="absolute -bottom-24 -left-16 h-72 w-72 rounded-full bg-primary-500/20 blur-3xl" />
+    <section className="relative bg-primary-950 text-white py-14 sm:py-20">
       <Container className="relative">
         <nav className="flex items-center flex-wrap gap-1.5 text-xs text-white/50 mb-5">
           <Link href="/" className="flex items-center gap-1 hover:text-white transition-colors">
@@ -37,7 +34,7 @@ export default function PageHeader({
           ))}
         </nav>
         {eyebrow && (
-          <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-accent-300 backdrop-blur mb-4">
+          <span className="block text-xs font-bold uppercase tracking-widest text-primary-200 mb-4">
             {eyebrow}
           </span>
         )}

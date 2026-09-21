@@ -1,57 +1,69 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, PlayCircle, BadgeCheck, Sparkles } from "lucide-react";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import { SITE } from "@/data/site";
 
+const quickLinks = [
+  { label: "Institut haqida", href: "/institut" },
+  { label: "Faoliyat yo'nalishlari", href: "/faoliyat" },
+  { label: "Nashrlar", href: "/nashrlar" },
+  { label: "Hujjatlar", href: "/hujjatlar" },
+  { label: "Yangiliklar", href: "/yangiliklar" },
+  { label: "Aloqa", href: "/aloqa" },
+];
+
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-primary-950 via-primary-900 to-primary-950 text-white">
-      <div className="absolute inset-0 bg-grid opacity-40" />
-      <div className="absolute -top-32 -left-20 h-96 w-96 rounded-full bg-primary-500/20 blur-3xl" />
-      <div className="absolute top-40 -right-32 h-[28rem] w-[28rem] rounded-full bg-accent-500/10 blur-3xl" />
+    <section className="relative overflow-hidden bg-primary-950 text-white">
+      <Image
+        src="https://picsum.photos/seed/imti-hero/1600/900"
+        alt="Institut faoliyatidan lavha"
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover"
+      />
+      <div className="absolute inset-0 bg-gradient-to-r from-primary-950 via-primary-950/90 to-primary-950/60" />
 
-      <Container className="relative grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-12 items-center py-16 sm:py-20 lg:py-28">
+      <Container className="relative grid grid-cols-1 lg:grid-cols-[1fr_0.85fr] gap-12 py-16 sm:py-20 lg:py-28">
         <div>
           <motion.span
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-accent-300 backdrop-blur"
+            transition={{ duration: 0.35 }}
+            className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary-200"
           >
             <Sparkles className="h-3.5 w-3.5" />
             {SITE.parentOrg} huzurida
           </motion.span>
 
           <motion.h1
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            className="mt-6 text-4xl sm:text-5xl lg:text-[3.4rem] font-extrabold leading-[1.08] tracking-tight text-balance"
+            transition={{ duration: 0.4, delay: 0.05 }}
+            className="mt-4 text-4xl sm:text-5xl lg:text-[3.2rem] font-extrabold leading-[1.08] tracking-tight text-balance"
           >
-            Ijtimoiy-Ma&apos;naviy{" "}
-            <span className="bg-gradient-to-r from-accent-300 to-accent-500 bg-clip-text text-transparent">
-              Tadqiqotlar
-            </span>{" "}
-            Instituti
+            Ijtimoiy-Ma&apos;naviy Tadqiqotlar Instituti
           </motion.h1>
 
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="mt-6 max-w-xl text-base sm:text-lg text-white/70 leading-relaxed"
+            transition={{ duration: 0.4, delay: 0.1 }}
+            className="mt-6 max-w-xl text-base sm:text-lg text-white/75 leading-relaxed"
           >
             {SITE.description}
           </motion.p>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.3 }}
+            transition={{ duration: 0.4, delay: 0.15 }}
             className="mt-9 flex flex-wrap items-center gap-4"
           >
             <Button href="/institut" size="lg" icon={<ArrowRight className="h-4 w-4" />}>
@@ -65,46 +77,58 @@ export default function Hero() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.7, delay: 0.45 }}
-            className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm text-white/60"
+            transition={{ duration: 0.4, delay: 0.25 }}
+            className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm text-white/70"
           >
             <span className="flex items-center gap-2">
-              <BadgeCheck className="h-4 w-4 text-accent-400" /> {SITE.founded}-yildan buyon faoliyat
+              <BadgeCheck className="h-4 w-4 text-primary-300" /> {SITE.founded}-yildan buyon faoliyat
             </span>
             <span className="flex items-center gap-2">
-              <BadgeCheck className="h-4 w-4 text-accent-400" /> Davlat va xalqaro miqyosda tan olingan
+              <BadgeCheck className="h-4 w-4 text-primary-300" /> Davlat va xalqaro miqyosda tan olingan
             </span>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.4, delay: 0.3 }}
+            className="mt-8 flex items-center gap-8 border-t border-white/15 pt-6 text-white"
+          >
+            <div>
+              <p className="text-2xl font-extrabold">340+</p>
+              <p className="text-xs text-white/60 mt-0.5">Nashr etilgan ilmiy ish</p>
+            </div>
+            <span className="h-8 w-px bg-white/15" />
+            <div>
+              <p className="text-2xl font-extrabold">45+</p>
+              <p className="text-xs text-white/60 mt-0.5">Xalqaro hamkor tashkilot</p>
+            </div>
           </motion.div>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.94 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative mx-auto w-full max-w-md lg:max-w-none"
+        <motion.nav
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.4, delay: 0.2 }}
+          className="lg:justify-self-end lg:self-center w-full max-w-xs"
         >
-          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[2rem] border border-white/10 shadow-[0_30px_80px_rgba(0,0,0,0.45)]">
-            <Image
-              src="https://picsum.photos/seed/imti-hero/900/1100"
-              alt="Institut faoliyatidan lavha"
-              fill
-              priority
-              sizes="(min-width: 1024px) 480px, 90vw"
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-primary-950/70 via-transparent to-transparent" />
-          </div>
-
-          <div className="absolute -bottom-6 -left-6 sm:-left-10 w-56 rounded-2xl bg-white/95 backdrop-blur p-4 shadow-2xl text-primary-950">
-            <p className="text-3xl font-extrabold text-primary-800">340+</p>
-            <p className="text-xs text-slate-500 mt-1">Nashr etilgan ilmiy tadqiqot va monografiyalar</p>
-          </div>
-
-          <div className="absolute -top-6 -right-4 sm:-right-8 rounded-2xl bg-accent-400 p-4 shadow-2xl text-primary-950 max-w-[10rem]">
-            <p className="text-2xl font-extrabold">45+</p>
-            <p className="text-xs font-medium mt-1">Xalqaro hamkor tashkilot</p>
-          </div>
-        </motion.div>
+          <p className="text-xs font-bold uppercase tracking-widest text-primary-200 mb-3">
+            Tezkor havolalar
+          </p>
+          <ul className="rounded-md border border-white/15 divide-y divide-white/15 overflow-hidden">
+            {quickLinks.map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className="flex items-center justify-between px-4 py-3 text-sm font-medium text-white/85 hover:bg-white/10 hover:text-white transition-colors"
+                >
+                  {link.label}
+                  <ArrowRight className="h-3.5 w-3.5" />
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </motion.nav>
       </Container>
     </section>
   );

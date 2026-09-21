@@ -32,7 +32,7 @@ export default function GalleryGridClient() {
           <Reveal key={item.title} delay={(i % 6) * 0.05} className="break-inside-avoid">
             <button
               onClick={() => setActiveIndex(i)}
-              className="group relative block w-full overflow-hidden rounded-2xl border border-slate-100 shadow-[0_2px_4px_rgba(16,24,40,0.04)]"
+              className="group relative block w-full overflow-hidden rounded-sm border border-line"
             >
               <Image
                 src={item.image}
@@ -83,7 +83,7 @@ export default function GalleryGridClient() {
             <ChevronRight className="h-5 w-5" />
           </button>
           <div
-            className="relative max-h-[80vh] w-full max-w-3xl overflow-hidden rounded-2xl"
+            className="relative max-h-[80vh] w-full max-w-3xl overflow-hidden rounded-md"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="relative aspect-[4/3] w-full">

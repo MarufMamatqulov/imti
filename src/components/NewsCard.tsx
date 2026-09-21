@@ -21,7 +21,7 @@ export default function NewsCard({
   return (
     <Link
       href={`/yangiliklar/${item.slug}`}
-      className="group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-[0_2px_4px_rgba(16,24,40,0.04)] hover:shadow-[0_20px_48px_rgba(10,31,77,0.12)] transition-all duration-300"
+      className="group flex h-full flex-col overflow-hidden rounded-md border border-line bg-white hover:border-primary-300 transition-colors duration-300"
     >
       <div className={`relative w-full overflow-hidden ${featured ? "aspect-[16/10]" : "aspect-[16/11]"}`}>
         <Image
@@ -29,9 +29,9 @@ export default function NewsCard({
           alt={item.title}
           fill
           sizes="(min-width: 1024px) 400px, 90vw"
-          className="object-cover transition-transform duration-500 group-hover:scale-105"
+          className="object-cover"
         />
-        <span className="absolute left-3 top-3 rounded-full bg-white/90 backdrop-blur px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-primary-700">
+        <span className="absolute left-3 top-3 rounded bg-primary-950/85 px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-white">
           {item.category}
         </span>
       </div>

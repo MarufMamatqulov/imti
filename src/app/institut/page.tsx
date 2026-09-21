@@ -35,17 +35,17 @@ const values = [
 
 const timeline = [
   {
-    year: "2019",
+    year: "2021",
     title: "Institut tashkil etildi",
-    text: "Respublika Ma'naviyat va Ma'rifat Markazi huzurida Ijtimoiy-Ma'naviy Tadqiqotlar Instituti faoliyatini boshladi.",
+    text: "Vazirlar Mahkamasining 2021-yil 3-iyundagi 340-son qarori bilan Respublika Ma'naviyat va Ma'rifat Markazi huzurida Ijtimoiy-Ma'naviy Tadqiqotlar Instituti faoliyati tashkil etildi.",
   },
   {
-    year: "2021",
+    year: "2022",
     title: "Ilmiy jurnal ta'sis etildi",
     text: "\"Ijtimoiy-ma'naviy tadqiqotlar\" ilmiy jurnalining birinchi soni chop etildi.",
   },
   {
-    year: "2023",
+    year: "2024",
     title: "Xalqaro hamkorlik kengaydi",
     text: "Bir qator xorijiy ilmiy-tadqiqot markazlari bilan hamkorlik memorandumlari imzolandi.",
   },
@@ -90,7 +90,7 @@ export default function InstitutPage() {
             </Button>
           </Reveal>
           <Reveal delay={0.1}>
-            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl shadow-[0_20px_60px_rgba(10,31,77,0.15)]">
+            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-md border border-line">
               <Image
                 src="https://picsum.photos/seed/imti-institute-building/1000/760"
                 alt="Institut binosi"
@@ -114,8 +114,8 @@ export default function InstitutPage() {
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6">
             {values.map((value, i) => (
               <Reveal key={value.title} delay={i * 0.1}>
-                <div className="h-full rounded-2xl border border-slate-100 bg-white p-8 text-center shadow-[0_2px_4px_rgba(16,24,40,0.04)]">
-                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-primary-50 text-primary-700">
+                <div className="h-full rounded-md border border-line bg-white p-8 text-center">
+                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-md bg-primary-50 text-primary-700">
                     <value.icon className="h-6 w-6" />
                   </div>
                   <h3 className="mt-5 text-lg font-bold text-primary-950">{value.title}</h3>
@@ -140,12 +140,12 @@ export default function InstitutPage() {
                       i % 2 === 1 ? "sm:flex-row-reverse sm:text-right" : ""
                     }`}
                   >
-                    <div className="absolute left-0 sm:left-1/2 top-1 h-8 w-8 -translate-x-1/2 rounded-full bg-accent-400 text-primary-950 flex items-center justify-center font-bold text-xs shrink-0 ring-4 ring-white shadow-md">
+                    <div className="absolute left-0 sm:left-1/2 top-1 h-8 w-8 -translate-x-1/2 rounded-full bg-primary-700 text-white flex items-center justify-center font-bold text-xs shrink-0 ring-4 ring-white">
                       {item.year.slice(2)}
                     </div>
                     <div className="pl-12 sm:pl-0 sm:w-1/2" />
                     <div className={`pl-12 sm:pl-0 sm:w-1/2 ${i % 2 === 1 ? "sm:pr-10" : "sm:pl-10"}`}>
-                      <span className="text-sm font-bold text-accent-600">{item.year}</span>
+                      <span className="text-sm font-bold text-primary-700">{item.year}</span>
                       <h3 className="text-lg font-bold text-primary-950 mt-1">{item.title}</h3>
                       <p className="mt-2 text-sm text-slate-600 leading-relaxed">{item.text}</p>
                     </div>
@@ -164,9 +164,9 @@ export default function InstitutPage() {
               <Reveal key={link.href} delay={i * 0.1}>
                 <Link
                   href={link.href}
-                  className="group flex h-full flex-col rounded-2xl border border-slate-100 bg-white p-8 shadow-[0_2px_4px_rgba(16,24,40,0.04)] hover:shadow-[0_20px_48px_rgba(10,31,77,0.12)] hover:-translate-y-1 transition-all duration-300"
+                  className="group flex h-full flex-col rounded-md border border-line bg-white p-8 hover:border-primary-300 transition-colors duration-300"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary-50 text-primary-700 group-hover:bg-primary-800 group-hover:text-white transition-colors">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-md bg-primary-50 text-primary-700 group-hover:bg-primary-800 group-hover:text-white transition-colors">
                     <link.icon className="h-6 w-6" />
                   </div>
                   <h3 className="mt-5 text-lg font-bold text-primary-950">{link.title}</h3>

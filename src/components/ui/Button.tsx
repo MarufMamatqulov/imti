@@ -25,17 +25,15 @@ type ButtonAsButton = CommonProps & {
 type Props = ButtonAsLink | ButtonAsButton;
 
 const base =
-  "inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-all duration-200 whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent-400 disabled:opacity-50 disabled:pointer-events-none";
+  "inline-flex items-center justify-center gap-2 rounded font-semibold transition-colors duration-200 whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary-400 disabled:opacity-50 disabled:pointer-events-none";
 
 const variants = {
-  primary:
-    "bg-accent-400 text-primary-950 hover:bg-accent-300 shadow-[0_8px_24px_rgba(247,154,5,0.35)] hover:shadow-[0_10px_28px_rgba(247,154,5,0.45)] hover:-translate-y-0.5",
-  secondary:
-    "bg-primary-900 text-white hover:bg-primary-800 hover:-translate-y-0.5",
+  primary: "bg-primary-700 text-white hover:bg-primary-800",
+  secondary: "bg-primary-900 text-white hover:bg-primary-800",
   ghost:
-    "bg-white text-primary-900 border border-primary-100 hover:border-primary-300 hover:bg-primary-50",
+    "bg-white text-primary-700 border border-line hover:border-primary-300 hover:bg-primary-50",
   "outline-light":
-    "bg-white/10 text-white border border-white/30 backdrop-blur hover:bg-white/20",
+    "bg-transparent text-white border border-white/50 hover:bg-white/10",
 };
 
 const sizes = {

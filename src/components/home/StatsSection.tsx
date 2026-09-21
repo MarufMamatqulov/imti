@@ -8,10 +8,10 @@ export default function StatsSection() {
   return (
     <section className="relative -mt-10 sm:-mt-14 z-10">
       <Container>
-        <div className="rounded-3xl bg-white shadow-[0_20px_60px_rgba(10,31,77,0.12)] border border-slate-100 grid grid-cols-2 md:grid-cols-5 divide-x divide-y md:divide-y-0 divide-slate-100">
+        <div className="rounded-md bg-white border border-line grid grid-cols-2 md:grid-cols-5 divide-x divide-y md:divide-y-0 divide-line">
           {STATS.map((stat, i) => (
             <Reveal key={stat.label} delay={i * 0.06} className="p-6 sm:p-8 text-center">
-              <div className="mx-auto mb-3 flex h-11 w-11 items-center justify-center rounded-xl bg-primary-50 text-primary-700">
+              <div className="mx-auto mb-3 flex h-11 w-11 items-center justify-center rounded-md bg-primary-50 text-primary-700">
                 <Icon name={stat.icon} className="h-5 w-5" />
               </div>
               <p className="text-2xl sm:text-3xl font-extrabold text-primary-950">

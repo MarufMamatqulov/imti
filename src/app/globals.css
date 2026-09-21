@@ -1,36 +1,32 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f7f8fb;
-  --foreground: #101828;
+  --background: #ffffff;
+  --foreground: #000000;
 
-  --color-primary-50: #eef4ff;
-  --color-primary-100: #dce8ff;
-  --color-primary-200: #b3cdff;
-  --color-primary-300: #7fa9ff;
-  --color-primary-400: #4a80f5;
-  --color-primary-500: #2260e0;
-  --color-primary-600: #1546b0;
-  --color-primary-700: #123a8f;
-  --color-primary-800: #0f2f72;
-  --color-primary-900: #0a1f4d;
-  --color-primary-950: #061436;
+  /* Primary navy scale, anchored on gov.uz's exact brand blue (primary-700 = #013d8c) */
+  --color-primary-50: #eaf1fa;
+  --color-primary-100: #cfe1f5;
+  --color-primary-200: #a1c4ea;
+  --color-primary-300: #72a5df;
+  --color-primary-400: #4483d0;
+  --color-primary-500: #1f63b8;
+  --color-primary-600: #0e4da0;
+  --color-primary-700: #013d8c;
+  --color-primary-800: #012e68;
+  --color-primary-900: #012047;
+  --color-primary-950: #01132c;
 
-  --color-accent-50: #fff9eb;
-  --color-accent-100: #ffefc2;
-  --color-accent-200: #ffdf85;
-  --color-accent-300: #ffcb47;
-  --color-accent-400: #ffb81c;
-  --color-accent-500: #f79a05;
-  --color-accent-600: #d67a02;
-  --color-accent-700: #b05a06;
-  --color-accent-800: #8f470c;
-  --color-accent-900: #763b0e;
+  /* Footer uses gov.uz's distinct second navy shade, not primary-950 */
+  --color-footer-navy: #143797;
 
-  --color-emerald-accent: #0fb27a;
+  /* Hairline neutrals for borders/dividers and secondary meta text */
+  --color-line: #e8e8e8;
+  --color-muted: #707070;
 
-  --shadow-soft: 0 1px 2px rgba(16, 24, 40, 0.04), 0 8px 24px rgba(16, 24, 40, 0.06);
-  --shadow-card: 0 2px 4px rgba(16, 24, 40, 0.04), 0 16px 40px rgba(10, 31, 77, 0.08);
+  /* Cards are defined by a hairline border now, not elevation */
+  --shadow-soft: 0 2px 10px rgba(1, 19, 44, 0.14);
+  --shadow-card: none;
 }
 
 @theme inline {
@@ -49,28 +45,21 @@
   --color-primary-900: var(--color-primary-900);
   --color-primary-950: var(--color-primary-950);
 
-  --color-accent-50: var(--color-accent-50);
-  --color-accent-100: var(--color-accent-100);
-  --color-accent-200: var(--color-accent-200);
-  --color-accent-300: var(--color-accent-300);
-  --color-accent-400: var(--color-accent-400);
-  --color-accent-500: var(--color-accent-500);
-  --color-accent-600: var(--color-accent-600);
-  --color-accent-700: var(--color-accent-700);
-  --color-accent-800: var(--color-accent-800);
-  --color-accent-900: var(--color-accent-900);
+  --color-footer-navy: var(--color-footer-navy);
+  --color-line: var(--color-line);
+  --color-muted: var(--color-muted);
 
-  --font-sans: var(--font-manrope), "Segoe UI", Arial, sans-serif;
-  --font-heading: var(--font-manrope), "Segoe UI", Arial, sans-serif;
+  --font-sans: var(--font-montserrat), "Segoe UI", Arial, sans-serif;
+  --font-heading: var(--font-montserrat), "Segoe UI", Arial, sans-serif;
 
-  --animate-fade-up: fade-up 0.7s ease both;
+  --animate-fade-up: fade-up 0.45s ease both;
   --animate-marquee: marquee 32s linear infinite;
 }
 
 @keyframes fade-up {
   from {
     opacity: 0;
-    transform: translateY(24px);
+    transform: translateY(8px);
   }
   to {
     opacity: 1;
@@ -94,7 +83,7 @@ body {
 }
 
 ::selection {
-  background: var(--color-accent-300);
+  background: var(--color-primary-200);
   color: var(--color-primary-950);
 }
 

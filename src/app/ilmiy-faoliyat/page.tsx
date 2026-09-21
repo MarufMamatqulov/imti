@@ -28,7 +28,7 @@ export default function IlmiyFaoliyatPage() {
             {RESEARCH_AREAS.map((area) => (
               <span
                 key={area}
-                className="rounded-full border border-primary-100 bg-primary-50 px-4 py-2 text-sm font-medium text-primary-800"
+                className="rounded-sm border border-primary-100 bg-primary-50 px-4 py-2 text-sm font-medium text-primary-800"
               >
                 {area}
               </span>
@@ -43,12 +43,12 @@ export default function IlmiyFaoliyatPage() {
           <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
             {RESEARCH_PROJECTS.map((project, i) => (
               <Reveal key={project.title} delay={(i % 2) * 0.1}>
-                <div className="h-full rounded-2xl border border-slate-100 bg-white p-7 shadow-[0_2px_4px_rgba(16,24,40,0.04)]">
+                <div className="h-full rounded-md border border-line bg-white p-7">
                   <div className="flex items-center justify-between gap-4">
                     <span
-                      className={`rounded-full px-3 py-1 text-xs font-bold ${
+                      className={`rounded-sm px-3 py-1 text-xs font-bold ${
                         project.status === "Davom etmoqda"
-                          ? "bg-emerald-50 text-emerald-accent"
+                          ? "bg-emerald-50 text-emerald-600"
                           : "bg-slate-100 text-slate-500"
                       }`}
                     >
@@ -60,7 +60,7 @@ export default function IlmiyFaoliyatPage() {
                   </div>
                   <h3 className="mt-4 text-lg font-bold text-primary-950 leading-snug">{project.title}</h3>
                   <p className="mt-2.5 text-sm text-slate-600 leading-relaxed">{project.description}</p>
-                  <p className="mt-4 flex items-center gap-2 text-xs font-semibold text-primary-700 border-t border-slate-100 pt-4">
+                  <p className="mt-4 flex items-center gap-2 text-xs font-semibold text-primary-700 border-t border-line pt-4">
                     <Users2 className="h-4 w-4" /> {project.lead}
                   </p>
                 </div>

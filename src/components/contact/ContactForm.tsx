@@ -19,7 +19,7 @@ export default function ContactForm() {
   if (status === "sent") {
     return (
       <div className="flex flex-col items-center justify-center text-center py-14 px-6">
-        <span className="flex h-16 w-16 items-center justify-center rounded-full bg-emerald-50 text-emerald-accent mb-5">
+        <span className="flex h-16 w-16 items-center justify-center rounded-full bg-emerald-50 text-emerald-600 mb-5">
           <CheckCircle2 className="h-8 w-8" />
         </span>
         <h3 className="text-lg font-bold text-primary-950">Murojaatingiz qabul qilindi</h3>
@@ -44,7 +44,7 @@ export default function ContactForm() {
           required
           type="text"
           placeholder="Ismingizni kiriting"
-          className="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm outline-none transition-colors focus:border-primary-400 focus:ring-2 focus:ring-primary-100"
+          className="w-full rounded-md border border-line px-4 py-3 text-sm outline-none transition-colors focus:border-primary-400 focus:ring-2 focus:ring-primary-100"
         />
       </div>
       <div>
@@ -53,7 +53,7 @@ export default function ContactForm() {
           required
           type="tel"
           placeholder="+998 90 123 45 67"
-          className="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm outline-none transition-colors focus:border-primary-400 focus:ring-2 focus:ring-primary-100"
+          className="w-full rounded-md border border-line px-4 py-3 text-sm outline-none transition-colors focus:border-primary-400 focus:ring-2 focus:ring-primary-100"
         />
       </div>
       <div className="sm:col-span-2">
@@ -61,7 +61,7 @@ export default function ContactForm() {
         <input
           type="email"
           placeholder="email@example.com"
-          className="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm outline-none transition-colors focus:border-primary-400 focus:ring-2 focus:ring-primary-100"
+          className="w-full rounded-md border border-line px-4 py-3 text-sm outline-none transition-colors focus:border-primary-400 focus:ring-2 focus:ring-primary-100"
         />
       </div>
       <div className="sm:col-span-2">
@@ -69,7 +69,7 @@ export default function ContactForm() {
         <select
           required
           defaultValue=""
-          className="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm outline-none transition-colors focus:border-primary-400 focus:ring-2 focus:ring-primary-100 text-slate-600"
+          className="w-full rounded-md border border-line px-4 py-3 text-sm outline-none transition-colors focus:border-primary-400 focus:ring-2 focus:ring-primary-100 text-slate-600"
         >
           <option value="" disabled>
             Mavzuni tanlang
@@ -87,7 +87,7 @@ export default function ContactForm() {
           required
           rows={5}
           placeholder="Murojaatingiz mazmunini batafsil yozing..."
-          className="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm outline-none transition-colors focus:border-primary-400 focus:ring-2 focus:ring-primary-100 resize-none"
+          className="w-full rounded-md border border-line px-4 py-3 text-sm outline-none transition-colors focus:border-primary-400 focus:ring-2 focus:ring-primary-100 resize-none"
         />
       </div>
       <div className="sm:col-span-2">

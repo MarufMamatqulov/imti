@@ -28,7 +28,7 @@ export default function PublicationsSection() {
           {items.map((pub, i) => (
             <Reveal key={pub.slug} delay={i * 0.06} className="shrink-0 w-44 sm:w-auto">
               <Link href="/nashrlar" className="group block">
-                <div className="relative aspect-[3/4] w-full overflow-hidden rounded-xl shadow-[0_8px_24px_rgba(10,31,77,0.12)] border border-slate-100 group-hover:-translate-y-1.5 transition-transform duration-300">
+                <div className="relative aspect-[3/4] w-full overflow-hidden rounded-md border border-line group-hover:border-primary-300 transition-colors duration-300">
                   <Image
                     src={pub.cover}
                     alt={pub.title}

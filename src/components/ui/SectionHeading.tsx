@@ -26,18 +26,10 @@ export default function SectionHeading({
       {eyebrow && (
         <span
           className={clsx(
-            "inline-flex items-center gap-2 rounded-full px-3.5 py-1 text-xs font-bold uppercase tracking-wider",
-            light
-              ? "bg-white/10 text-accent-300 border border-white/15"
-              : "bg-accent-50 text-accent-700 border border-accent-100"
+            "block text-xs font-bold uppercase tracking-widest",
+            light ? "text-primary-200" : "text-primary-700"
           )}
         >
-          <span
-            className={clsx(
-              "h-1.5 w-1.5 rounded-full",
-              light ? "bg-accent-300" : "bg-accent-500"
-            )}
-          />
           {eyebrow}
         </span>
       )}

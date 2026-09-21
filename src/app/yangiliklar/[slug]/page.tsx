@@ -53,13 +53,12 @@ export default async function NewsDetailPage({
 
   return (
     <>
-      <section className="relative overflow-hidden bg-gradient-to-b from-primary-950 via-primary-900 to-primary-950 text-white py-14 sm:py-16">
-        <div className="absolute inset-0 bg-grid opacity-30" />
-        <Container className="relative">
+      <section className="bg-primary-950 text-white py-14 sm:py-16">
+        <Container>
           <Link href="/yangiliklar" className="inline-flex items-center gap-1.5 text-sm text-white/60 hover:text-white transition-colors mb-6">
             <ArrowLeft className="h-4 w-4" /> Barcha yangiliklar
           </Link>
-          <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-accent-300 backdrop-blur mb-4">
+          <span className="block text-xs font-bold uppercase tracking-widest text-primary-200 mb-4">
             {item.category}
           </span>
           <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-balance max-w-3xl">
@@ -80,7 +79,7 @@ export default async function NewsDetailPage({
         <Container className="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-12">
           <article>
             <Reveal>
-              <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl shadow-[0_20px_60px_rgba(10,31,77,0.15)] mb-8">
+              <div className="relative aspect-[16/9] w-full overflow-hidden rounded-md border border-line mb-8">
                 <Image
                   src={item.image}
                   alt={item.title}
@@ -99,7 +98,7 @@ export default async function NewsDetailPage({
               ))}
             </div>
 
-            <div className="mt-10 flex items-center gap-3 border-t border-slate-100 pt-6">
+            <div className="mt-10 flex items-center gap-3 border-t border-line pt-6">
               <span className="flex items-center gap-1.5 text-sm font-semibold text-slate-500">
                 <Share2 className="h-4 w-4" /> Ulashish:
               </span>
@@ -107,7 +106,7 @@ export default async function NewsDetailPage({
                 href={`https://t.me/share/url?url=https://imti.uz/yangiliklar/${item.slug}&text=${encodeURIComponent(item.title)}`}
                 target="_blank"
                 rel="noreferrer"
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-100 text-slate-600 hover:bg-primary-900 hover:text-white transition-colors"
+                className="flex h-9 w-9 items-center justify-center rounded-md border border-line text-slate-600 hover:bg-primary-900 hover:text-white hover:border-primary-900 transition-colors"
                 aria-label="Telegramda ulashish"
               >
                 <TelegramIcon className="h-4 w-4" />
@@ -116,7 +115,7 @@ export default async function NewsDetailPage({
                 href={`https://www.facebook.com/sharer/sharer.php?u=https://imti.uz/yangiliklar/${item.slug}`}
                 target="_blank"
                 rel="noreferrer"
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-100 text-slate-600 hover:bg-primary-900 hover:text-white transition-colors"
+                className="flex h-9 w-9 items-center justify-center rounded-md border border-line text-slate-600 hover:bg-primary-900 hover:text-white hover:border-primary-900 transition-colors"
                 aria-label="Facebookda ulashish"
               >
                 <FacebookIcon className="h-4 w-4" />
@@ -125,7 +124,7 @@ export default async function NewsDetailPage({
                 href={`https://x.com/intent/tweet?url=https://imti.uz/yangiliklar/${item.slug}&text=${encodeURIComponent(item.title)}`}
                 target="_blank"
                 rel="noreferrer"
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-100 text-slate-600 hover:bg-primary-900 hover:text-white transition-colors"
+                className="flex h-9 w-9 items-center justify-center rounded-md border border-line text-slate-600 hover:bg-primary-900 hover:text-white hover:border-primary-900 transition-colors"
                 aria-label="X'da ulashish"
               >
                 <XIcon className="h-4 w-4" />
@@ -134,7 +133,7 @@ export default async function NewsDetailPage({
           </article>
 
           <aside className="space-y-6">
-            <div className="rounded-2xl border border-slate-100 bg-slate-50 p-6">
+            <div className="rounded-md border border-line bg-slate-50 p-6">
               <h3 className="font-bold text-primary-950 mb-4">O&apos;xshash yangiliklar</h3>
               <div className="space-y-4">
                 {related.map((rel) => (
@@ -143,7 +142,7 @@ export default async function NewsDetailPage({
                     href={`/yangiliklar/${rel.slug}`}
                     className="flex gap-3 group"
                   >
-                    <div className="relative h-16 w-20 shrink-0 overflow-hidden rounded-lg">
+                    <div className="relative h-16 w-20 shrink-0 overflow-hidden rounded-sm">
                       <Image src={rel.image} alt={rel.title} fill sizes="80px" className="object-cover" />
                     </div>
                     <div>
