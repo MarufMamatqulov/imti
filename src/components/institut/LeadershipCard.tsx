@@ -8,6 +8,16 @@ import { TelegramIcon, FacebookIcon, InstagramIcon, YoutubeIcon } from "@/compon
 import type { LeadershipMember } from "@/data/leadership";
 import { SITE } from "@/data/site";
 
+function initialsOf(fullName: string) {
+  return fullName
+    .split(" ")
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((part) => part[0])
+    .join("")
+    .toUpperCase();
+}
+
 export default function LeadershipCard({ member }: { member: LeadershipMember }) {
   const [tab, setTab] = useState<"duties" | "bio">("duties");
 
@@ -15,8 +25,12 @@ export default function LeadershipCard({ member }: { member: LeadershipMember })
     <div className="rounded-md border border-line bg-white p-6 sm:p-8">
       <div className="grid grid-cols-1 md:grid-cols-[auto_1fr_240px] gap-8">
         <div className="flex justify-center md:block md:pt-1">
-          <div className="relative h-32 w-32 shrink-0 overflow-hidden rounded-full border border-line">
-            <Image src={member.photo} alt={member.fullName} fill sizes="128px" className="object-cover" />
+          <div className="relative flex h-32 w-32 shrink-0 items-center justify-center overflow-hidden rounded-full border border-line bg-primary-50">
+            {member.photo ? (
+              <Image src={member.photo} alt={member.fullName} fill sizes="128px" className="object-cover" />
+            ) : (
+              <span className="text-2xl font-extrabold text-primary-700">{initialsOf(member.fullName)}</span>
+            )}
           </div>
         </div>
 

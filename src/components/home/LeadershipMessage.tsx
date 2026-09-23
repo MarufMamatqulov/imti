@@ -15,14 +15,20 @@ export default function LeadershipMessage() {
           <div className="rounded-md border border-line bg-primary-950 text-white">
             <div className="grid grid-cols-1 md:grid-cols-[280px_1fr] gap-10 p-8 sm:p-12">
               <div className="flex md:flex-col items-center md:items-start gap-4">
-                <div className="relative h-24 w-24 md:h-40 md:w-40 shrink-0 overflow-hidden rounded-md border border-white/15">
-                  <Image
-                    src={director.photo}
-                    alt={director.position}
-                    fill
-                    sizes="160px"
-                    className="object-cover"
-                  />
+                <div className="relative flex h-24 w-24 md:h-40 md:w-40 shrink-0 items-center justify-center overflow-hidden rounded-md border border-white/15 bg-white/5">
+                  {director.photo ? (
+                    <Image
+                      src={director.photo}
+                      alt={director.position}
+                      fill
+                      sizes="160px"
+                      className="object-cover"
+                    />
+                  ) : (
+                    <span className="text-2xl font-extrabold text-primary-200">
+                      {director.fullName.split(" ").slice(0, 2).map((p) => p[0]).join("").toUpperCase()}
+                    </span>
+                  )}
                 </div>
                 <div>
                   <p className="font-bold text-white">{director.fullName}</p>
