@@ -7,14 +7,7 @@ import Button from "@/components/ui/Button";
 import Reveal from "@/components/ui/Reveal";
 import NewsCard from "@/components/NewsCard";
 import { getLatestNews } from "@/data/news";
-
-function formatDate(date: string) {
-  return new Date(date).toLocaleDateString("uz-UZ", {
-    day: "2-digit",
-    month: "long",
-    year: "numeric",
-  });
-}
+import { formatDate, formatNumber } from "@/lib/format";
 
 export default function NewsSection() {
   const [featured, ...rest] = getLatestNews(5);
@@ -56,7 +49,7 @@ export default function NewsSection() {
                   <CalendarDays className="h-3.5 w-3.5" /> {formatDate(featured.date)}
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <Eye className="h-3.5 w-3.5" /> {featured.views.toLocaleString("uz-UZ")}
+                  <Eye className="h-3.5 w-3.5" /> {formatNumber(featured.views)}
                 </span>
               </div>
               <h3 className="text-xl sm:text-2xl font-extrabold text-primary-950 leading-snug group-hover:text-primary-700 transition-colors">

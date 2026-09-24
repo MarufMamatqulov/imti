@@ -5,14 +5,7 @@ import clsx from "clsx";
 import { FileText, FileSpreadsheet, Download, Calendar } from "lucide-react";
 import Reveal from "@/components/ui/Reveal";
 import { DOCUMENTS, DOCUMENT_CATEGORIES } from "@/data/documents";
-
-function formatDate(date: string) {
-  return new Date(date).toLocaleDateString("uz-UZ", {
-    day: "2-digit",
-    month: "long",
-    year: "numeric",
-  });
-}
+import { formatDate } from "@/lib/format";
 
 export default function DocumentsListClient() {
   const [active, setActive] = useState<string>("Barchasi");

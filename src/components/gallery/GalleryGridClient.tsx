@@ -5,14 +5,7 @@ import Image from "next/image";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import Reveal from "@/components/ui/Reveal";
 import { GALLERY } from "@/data/gallery";
-
-function formatDate(date: string) {
-  return new Date(date).toLocaleDateString("uz-UZ", {
-    day: "2-digit",
-    month: "long",
-    year: "numeric",
-  });
-}
+import { formatDate } from "@/lib/format";
 
 export default function GalleryGridClient() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);

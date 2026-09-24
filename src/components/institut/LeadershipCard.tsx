@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import Image from "next/image";
 import { Phone, Mail, Globe2, MapPin, CalendarClock, CheckCircle2 } from "lucide-react";
 import clsx from "clsx";
@@ -74,7 +74,22 @@ export default function LeadershipCard({ member }: { member: LeadershipMember })
                 ))}
               </ul>
             ) : (
-              <p className="text-sm text-slate-600 leading-relaxed">{member.bio}</p>
+              <div>
+                <p className="text-sm text-slate-600 leading-relaxed">{member.bioIntro}</p>
+                <div className="mt-4 border-t border-line pt-4">
+                  <p className="text-xs font-bold uppercase tracking-wider text-primary-700">Mehnat faoliyati</p>
+                  <div className="mt-3 grid grid-cols-[auto_1fr] gap-x-4 gap-y-2.5">
+                    {member.workHistory.map((row) => (
+                      <Fragment key={row.period}>
+                        <span className="text-sm font-semibold text-primary-950 whitespace-nowrap">
+                          {row.period}
+                        </span>
+                        <span className="text-sm text-slate-600 leading-relaxed">{row.role}</span>
+                      </Fragment>
+                    ))}
+                  </div>
+                </div>
+              </div>
             )}
           </div>
         </div>

@@ -37,6 +37,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# raw Telegram chat exports (large, not part of the site source)
+ChatExport_*/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

@@ -2,14 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { CalendarDays, Eye, ArrowUpRight } from "lucide-react";
 import type { NewsItem } from "@/data/news";
-
-function formatDate(date: string) {
-  return new Date(date).toLocaleDateString("uz-UZ", {
-    day: "2-digit",
-    month: "long",
-    year: "numeric",
-  });
-}
+import { formatDate, formatNumber } from "@/lib/format";
 
 export default function NewsCard({
   item,
@@ -41,7 +34,7 @@ export default function NewsCard({
             <CalendarDays className="h-3.5 w-3.5" /> {formatDate(item.date)}
           </span>
           <span className="flex items-center gap-1.5">
-            <Eye className="h-3.5 w-3.5" /> {item.views.toLocaleString("uz-UZ")}
+            <Eye className="h-3.5 w-3.5" /> {formatNumber(item.views)}
           </span>
         </div>
         <h3 className={`font-bold text-primary-950 leading-snug line-clamp-2 group-hover:text-primary-700 transition-colors ${featured ? "text-xl" : "text-base"}`}>

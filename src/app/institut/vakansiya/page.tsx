@@ -6,19 +6,12 @@ import Button from "@/components/ui/Button";
 import PageHeader from "@/components/PageHeader";
 import { VACANCIES } from "@/data/vacancies";
 import { SITE } from "@/data/site";
+import { formatDate } from "@/lib/format";
 
 export const metadata: Metadata = {
   title: "Vakansiyalar",
   description: "Institutdagi bo'sh ish o'rinlari va ularga qo'yiladigan talablar.",
 };
-
-function formatDate(date: string) {
-  return new Date(date).toLocaleDateString("uz-UZ", {
-    day: "2-digit",
-    month: "long",
-    year: "numeric",
-  });
-}
 
 export default function VakansiyaPage() {
   return (

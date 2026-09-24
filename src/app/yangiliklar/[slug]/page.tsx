@@ -9,6 +9,7 @@ import NewsCard from "@/components/NewsCard";
 import { TelegramIcon, FacebookIcon, XIcon } from "@/components/ui/SocialIcons";
 import { NEWS, getNewsBySlug, getRelatedNews } from "@/data/news";
 import { SITE } from "@/data/site";
+import { formatDate, formatNumber } from "@/lib/format";
 
 export function generateStaticParams() {
   return NEWS.map((item) => ({ slug: item.slug }));
@@ -31,14 +32,6 @@ export async function generateMetadata({
       images: [item.image],
     },
   };
-}
-
-function formatDate(date: string) {
-  return new Date(date).toLocaleDateString("uz-UZ", {
-    day: "2-digit",
-    month: "long",
-    year: "numeric",
-  });
 }
 
 export default async function NewsDetailPage({
@@ -70,7 +63,7 @@ export default async function NewsDetailPage({
               <CalendarDays className="h-4 w-4" /> {formatDate(item.date)}
             </span>
             <span className="flex items-center gap-1.5">
-              <Eye className="h-4 w-4" /> {item.views.toLocaleString("uz-UZ")} ko&apos;rildi
+              <Eye className="h-4 w-4" /> {formatNumber(item.views)} ko&apos;rildi
             </span>
           </div>
         </Container>
