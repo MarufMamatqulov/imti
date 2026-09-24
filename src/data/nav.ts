@@ -12,7 +12,7 @@ export const NAV_ITEMS: NavItem[] = [
     children: [
       { label: "Institut haqida", href: "/institut", description: "Missiya, tarix va faoliyat" },
       { label: "Rahbariyat", href: "/institut/rahbariyat", description: "Institut rahbariyati" },
-      { label: "Tuzilma", href: "/institut/tuzilma", description: "Bo'lim va markazlar" },
+      { label: "Tarkibiy bo'linmalar", href: "/institut/tuzilma", description: "Bo'lim rahbarlari" },
       { label: "Vakansiyalar", href: "/institut/vakansiya", description: "Bo'sh ish o'rinlari" },
     ],
   },

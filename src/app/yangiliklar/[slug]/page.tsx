@@ -8,6 +8,7 @@ import Reveal from "@/components/ui/Reveal";
 import NewsCard from "@/components/NewsCard";
 import { TelegramIcon, FacebookIcon, XIcon } from "@/components/ui/SocialIcons";
 import { NEWS, getNewsBySlug, getRelatedNews } from "@/data/news";
+import { SITE } from "@/data/site";
 
 export function generateStaticParams() {
   return NEWS.map((item) => ({ slug: item.slug }));
@@ -103,7 +104,7 @@ export default async function NewsDetailPage({
                 <Share2 className="h-4 w-4" /> Ulashish:
               </span>
               <a
-                href={`https://t.me/share/url?url=https://imti.uz/yangiliklar/${item.slug}&text=${encodeURIComponent(item.title)}`}
+                href={`https://t.me/share/url?url=${SITE.domain}/yangiliklar/${item.slug}&text=${encodeURIComponent(item.title)}`}
                 target="_blank"
                 rel="noreferrer"
                 className="flex h-9 w-9 items-center justify-center rounded-md border border-line text-slate-600 hover:bg-primary-900 hover:text-white hover:border-primary-900 transition-colors"
@@ -112,7 +113,7 @@ export default async function NewsDetailPage({
                 <TelegramIcon className="h-4 w-4" />
               </a>
               <a
-                href={`https://www.facebook.com/sharer/sharer.php?u=https://imti.uz/yangiliklar/${item.slug}`}
+                href={`https://www.facebook.com/sharer/sharer.php?u=${SITE.domain}/yangiliklar/${item.slug}`}
                 target="_blank"
                 rel="noreferrer"
                 className="flex h-9 w-9 items-center justify-center rounded-md border border-line text-slate-600 hover:bg-primary-900 hover:text-white hover:border-primary-900 transition-colors"
@@ -121,7 +122,7 @@ export default async function NewsDetailPage({
                 <FacebookIcon className="h-4 w-4" />
               </a>
               <a
-                href={`https://x.com/intent/tweet?url=https://imti.uz/yangiliklar/${item.slug}&text=${encodeURIComponent(item.title)}`}
+                href={`https://x.com/intent/tweet?url=${SITE.domain}/yangiliklar/${item.slug}&text=${encodeURIComponent(item.title)}`}
                 target="_blank"
                 rel="noreferrer"
                 className="flex h-9 w-9 items-center justify-center rounded-md border border-line text-slate-600 hover:bg-primary-900 hover:text-white hover:border-primary-900 transition-colors"

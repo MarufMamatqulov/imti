@@ -6,7 +6,7 @@
 // Ma'rifat Markazining rasmiy (manaviyat.uz) kontaktlari keltirilgan.
 // Institut o'zining alohida raqami/emailiga ega bo'lsa, shu yerda almashtiring.
 export const SITE = {
-  domain: "https://imti.uz",
+  domain: "https://www.imt-institut.uz",
   shortName: "IMTI",
   fullNameUz:
     "Respublika Ma'naviyat va Ma'rifat Markazi huzuridagi Ijtimoiy-Ma'naviy Tadqiqotlar Instituti",

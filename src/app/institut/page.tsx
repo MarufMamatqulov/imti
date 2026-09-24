@@ -58,7 +58,7 @@ const timeline = [
 
 const links = [
   { title: "Rahbariyat", href: "/institut/rahbariyat", text: "Institut rahbariyati va qabul kunlari", icon: Landmark },
-  { title: "Tuzilma", href: "/institut/tuzilma", text: "Bo'lim va markazlar tuzilmasi", icon: Target },
+  { title: "Tarkibiy bo'linmalar", href: "/institut/tuzilma", text: "Bo'lim rahbarlari va aloqa ma'lumotlari", icon: Target },
   { title: "Vakansiyalar", href: "/institut/vakansiya", text: "Bo'sh ish o'rinlari va talablar", icon: HeartHandshake },
 ];
 
