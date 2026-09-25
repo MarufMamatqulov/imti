@@ -21,6 +21,7 @@ export const NAV_ITEMS: NavItem[] = [
   { label: "Yangiliklar", href: "/yangiliklar" },
   { label: "Nashrlar", href: "/nashrlar" },
   { label: "Hujjatlar", href: "/hujjatlar" },
+  { label: "Materiallar", href: "/materiallar" },
   { label: "Galereya", href: "/galereya" },
   { label: "Aloqa", href: "/aloqa" },
 ];

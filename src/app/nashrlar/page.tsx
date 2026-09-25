@@ -5,7 +5,7 @@ import PublicationsListClient from "@/components/publications/PublicationsListCl
 
 export const metadata: Metadata = {
   title: "Nashrlar",
-  description: "Institut tomonidan chop etilgan monografiya, tadqiqot hisobotlari va ilmiy jurnallar.",
+  description: "Institut xodimlarining OAVda chop etilgan maqolalari, ilmiy jurnal maqolalari va ommabop nashrlari.",
 };
 
 export default function NashrlarPage() {
@@ -13,8 +13,8 @@ export default function NashrlarPage() {
     <>
       <PageHeader
         eyebrow="Elektron kutubxona"
-        title="Ilmiy nashrlar"
-        description="Institut olimlari va tadqiqotchilari tomonidan tayyorlangan monografiya, tadqiqot hisobotlari va ilmiy jurnal sonlari bilan tanishing."
+        title="Nashrlar"
+        description="Institut xodimlari va tadqiqotchilarining ommaviy axborot vositalarida chop etilgan maqolalari, ilmiy jurnal nashrlari va ommabop risolalari bilan tanishing."
         crumbs={[{ label: "Nashrlar" }]}
       />
 

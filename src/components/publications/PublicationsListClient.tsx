@@ -3,11 +3,11 @@
 import { useMemo, useState } from "react";
 import Image from "next/image";
 import clsx from "clsx";
-import { FileText, Download, User, Calendar } from "lucide-react";
+import { FileText, ExternalLink, User, Calendar } from "lucide-react";
 import Reveal from "@/components/ui/Reveal";
 import { PUBLICATIONS } from "@/data/publications";
 
-const TYPES = ["Barchasi", "Monografiya", "Tadqiqot hisoboti", "Ilmiy-ommabop nashr", "Ilmiy jurnal"];
+const TYPES = ["Barchasi", "OAV maqolalari", "Ilmiy jurnal", "Ilmiy-ommabop nashr"];
 
 export default function PublicationsListClient() {
   const [active, setActive] = useState("Barchasi");
@@ -52,11 +52,18 @@ export default function PublicationsListClient() {
                   <User className="h-3 w-3" /> {pub.author}
                 </p>
                 <p className="text-xs text-slate-400 flex items-center gap-1.5 mt-1">
-                  <Calendar className="h-3 w-3" /> {pub.year} · {pub.pages} bet
+                  <Calendar className="h-3 w-3" /> {pub.source}
                 </p>
-                <button className="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold text-primary-700 hover:text-primary-900">
-                  <Download className="h-3.5 w-3.5" /> Yuklab olish
-                </button>
+                {pub.url && (
+                  <a
+                    href={pub.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold text-primary-700 hover:text-primary-900"
+                  >
+                    <ExternalLink className="h-3.5 w-3.5" /> Manbada o&apos;qish
+                  </a>
+                )}
               </div>
             </div>
           </Reveal>

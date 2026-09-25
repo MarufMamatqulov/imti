@@ -2,8 +2,9 @@ export type DocumentItem = {
   title: string;
   category: string;
   date: string;
-  fileType: "PDF" | "DOCX" | "XLSX";
+  fileType: "PDF" | "DOC" | "DOCX" | "XLSX" | "PPTX";
   fileSize: string;
+  file: string;
 };
 
 export const DOCUMENT_CATEGORIES = [
@@ -15,61 +16,65 @@ export const DOCUMENT_CATEGORIES = [
   "Ochiq ma'lumotlar",
 ] as const;
 
+// Manba: institut xodimi tomonidan taqdim etilgan rasmiy hujjatlar
+// (Ustav va bo'lim nizomlari). Sanalar hujjatning o'zida ko'rsatilgan
+// tasdiqlangan/tayyorlangan yiliga mos keladi; aniq kun ko'rsatilmagan
+// hujjatlar uchun oyning boshi qo'yilgan.
 export const DOCUMENTS: DocumentItem[] = [
   {
-    title: "Ijtimoiy-Ma'naviy Tadqiqotlar Instituti to'g'risidagi NIZOM",
+    title: "Ijtimoiy-Ma'naviy Tadqiqotlar Instituti USTAVI",
     category: "Institut ustavi",
-    date: "2026-01-14",
+    date: "2021-06-04",
     fileType: "PDF",
-    fileSize: "1.2 MB",
+    fileSize: "1.0 MB",
+    file: "/hujjatlar/institut-ustavi.pdf",
   },
   {
-    title: "Institutni tashkil etish to'g'risida qaror",
-    category: "Normativ-huquqiy hujjatlar",
-    date: "2019-05-21",
-    fileType: "PDF",
-    fileSize: "640 KB",
+    title: "\"Ilmiy ekspertiza\" bo'limi to'g'risida nizom",
+    category: "Institut ustavi",
+    date: "2022-05-17",
+    fileType: "DOC",
+    fileSize: "65 KB",
+    file: "/hujjatlar/ilmiy-ekspertiza-bolimi-nizomi.doc",
   },
   {
-    title: "2026-yil uchun ilmiy-tadqiqot ishlari rejasi",
-    category: "Buyruq va farmoyishlar",
-    date: "2026-01-10",
+    title: "\"Ilmiy tadqiqotlarni tashkil etish va amalga oshirish\" bo'limi to'g'risida nizom",
+    category: "Institut ustavi",
+    date: "2025-12-01",
     fileType: "DOCX",
-    fileSize: "310 KB",
+    fileSize: "38 KB",
+    file: "/hujjatlar/ilmiy-tadqiqotlarni-tashkil-etish-bolimi-nizomi.docx",
   },
   {
-    title: "Institut faoliyati bo'yicha 2025-yilgi yakuniy hisobot",
-    category: "Hisobotlar",
-    date: "2026-01-25",
-    fileType: "PDF",
-    fileSize: "2.4 MB",
-  },
-  {
-    title: "Xodimlarni tanlov asosida ishga qabul qilish tartibi",
-    category: "Normativ-huquqiy hujjatlar",
-    date: "2025-11-02",
-    fileType: "PDF",
-    fileSize: "480 KB",
-  },
-  {
-    title: "Ochiq ma'lumotlar: byudjet mablag'laridan foydalanish tahlili",
-    category: "Ochiq ma'lumotlar",
-    date: "2025-10-18",
-    fileType: "XLSX",
-    fileSize: "128 KB",
-  },
-  {
-    title: "Ilmiy kengash faoliyati to'g'risidagi nizom",
+    title: "\"Malaka oshirish\" bo'limi to'g'risida nizom",
     category: "Institut ustavi",
-    date: "2024-06-09",
-    fileType: "PDF",
-    fileSize: "560 KB",
+    date: "2021-01-01",
+    fileType: "DOCX",
+    fileSize: "21 KB",
+    file: "/hujjatlar/malaka-oshirish-bolimi-nizomi.docx",
   },
   {
-    title: "Fuqarolar murojaatlari bilan ishlash bo'yicha yo'riqnoma",
-    category: "Normativ-huquqiy hujjatlar",
-    date: "2024-03-12",
-    fileType: "PDF",
-    fileSize: "390 KB",
+    title: "\"Ijtimoiy-ma'naviy muhitni tahlil qilish va zamonaviy targ'ibot texnologiyalarini ishlab chiqish\" bo'limi to'g'risida nizom",
+    category: "Institut ustavi",
+    date: "2023-01-01",
+    fileType: "DOCX",
+    fileSize: "23 KB",
+    file: "/hujjatlar/ijtimoiy-manaviy-muhitni-tahlil-qilish-bolimi-nizomi.docx",
+  },
+  {
+    title: "\"Milliy g'oya va ma'naviy-ma'rifiy targ'ibot ishlarini metodik ta'minlash\" bo'limi to'g'risida nizom",
+    category: "Institut ustavi",
+    date: "2021-01-01",
+    fileType: "DOCX",
+    fileSize: "29 KB",
+    file: "/hujjatlar/milliy-goya-targibot-bolimi-nizomi.docx",
+  },
+  {
+    title: "Institut haqida taqdimot",
+    category: "Ochiq ma'lumotlar",
+    date: "2026-08-01",
+    fileType: "PPTX",
+    fileSize: "4.6 MB",
+    file: "/hujjatlar/institut-haqida-taqdimot.pptx",
   },
 ];

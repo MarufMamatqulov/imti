@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import clsx from "clsx";
-import { FileText, FileSpreadsheet, Download, Calendar } from "lucide-react";
+import { FileText, FileSpreadsheet, Presentation, Download, Calendar } from "lucide-react";
 import Reveal from "@/components/ui/Reveal";
 import { DOCUMENTS, DOCUMENT_CATEGORIES } from "@/data/documents";
 import { formatDate } from "@/lib/format";
@@ -41,6 +41,8 @@ export default function DocumentsListClient() {
               <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md bg-primary-50 text-primary-700">
                 {doc.fileType === "XLSX" ? (
                   <FileSpreadsheet className="h-5 w-5" />
+                ) : doc.fileType === "PPTX" ? (
+                  <Presentation className="h-5 w-5" />
                 ) : (
                   <FileText className="h-5 w-5" />
                 )}
@@ -55,9 +57,13 @@ export default function DocumentsListClient() {
                   <span>{doc.fileType} · {doc.fileSize}</span>
                 </div>
               </div>
-              <button className="inline-flex items-center gap-1.5 rounded-sm border border-primary-100 bg-primary-50 px-4 py-2 text-xs font-bold text-primary-700 hover:bg-primary-100 transition-colors shrink-0">
+              <a
+                href={doc.file}
+                download
+                className="inline-flex items-center gap-1.5 rounded-sm border border-primary-100 bg-primary-50 px-4 py-2 text-xs font-bold text-primary-700 hover:bg-primary-100 transition-colors shrink-0"
+              >
                 <Download className="h-3.5 w-3.5" /> Yuklab olish
-              </button>
+              </a>
             </div>
           </Reveal>
         ))}

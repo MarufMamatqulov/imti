@@ -13,6 +13,7 @@ const staticRoutes = [
   "/yangiliklar",
   "/nashrlar",
   "/hujjatlar",
+  "/materiallar",
   "/galereya",
   "/aloqa",
 ];

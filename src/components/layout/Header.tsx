@@ -97,26 +97,42 @@ export default function Header() {
 
       <div className="hidden xl:block bg-slate-100 border-b border-line">
         <Container className="flex items-center justify-between">
-          <nav className="flex items-center">
+          <nav className="flex min-w-0 items-center">
             {NAV_ITEMS.map((item) => {
               const active = item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
               return (
                 <div
                   key={item.href}
-                  className="relative"
+                  className="relative shrink-0"
                   onMouseEnter={() => item.children && setOpenDropdown(item.href)}
                   onMouseLeave={() => item.children && setOpenDropdown(null)}
                 >
-                  <Link
-                    href={item.href}
+                  <div
                     className={clsx(
-                      "flex items-center gap-1 px-4 py-3 text-[13.5px] font-semibold transition-colors",
+                      "flex items-center whitespace-nowrap text-[13.5px] font-semibold transition-colors",
                       active ? "bg-primary-700 text-white" : "text-primary-950 hover:bg-white"
                     )}
                   >
-                    {item.label}
-                    {item.children && <ChevronDown className="h-3.5 w-3.5" />}
-                  </Link>
+                    <Link href={item.href} className="py-3 pl-3.5 pr-1">
+                      {item.label}
+                    </Link>
+                    {item.children && (
+                      <button
+                        type="button"
+                        onClick={() => setOpenDropdown(item.href)}
+                        aria-label={`${item.label} bo'limini kengaytirish`}
+                        aria-expanded={openDropdown === item.href}
+                        className="py-3 pl-1 pr-3.5"
+                      >
+                        <ChevronDown
+                          className={clsx(
+                            "h-3.5 w-3.5 transition-transform",
+                            openDropdown === item.href && "rotate-180"
+                          )}
+                        />
+                      </button>
+                    )}
+                  </div>
 
                   {item.children && (
                     <div
@@ -148,7 +164,7 @@ export default function Header() {
             })}
           </nav>
 
-          <Button href="/aloqa" size="sm" className="my-2">
+          <Button href="/aloqa" size="sm" className="my-2 shrink-0">
             Murojaat qilish
           </Button>
         </Container>

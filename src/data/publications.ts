@@ -4,76 +4,107 @@ export type Publication = {
   author: string;
   year: number;
   type: string;
-  pages: number;
+  source: string;
+  url?: string;
   cover: string;
   description: string;
 };
 
+// Manba: institutning ichki suhbat arxividan olingan OAVda chop etilgan
+// maqolalar va nashrlar (2026-yil). Rasmlar tegishli gazeta/jurnal
+// sahifalarining haqiqiy skanlaridir.
 export const PUBLICATIONS: Publication[] = [
   {
-    slug: "manaviyat-va-milliy-goya",
-    title: "Ma'naviyat va milliy g'oya: nazariya va amaliyot",
-    author: "Institut jamoasi",
+    slug: "qadriyat-taqvimga-kirgan-sana",
+    title: "Qadriyat taqvimga kirgan sana",
+    author: "Bo'ri Qodirov, Alisher Atayev",
     year: 2026,
-    type: "Monografiya",
-    pages: 284,
-    cover: "https://picsum.photos/seed/imti-book1/400/560",
-    description:
-      "Milliy g'oyaning shakllanish tarixi, uning zamonaviy jamiyatdagi o'rni va istiqbolli rivojlanish yo'nalishlari tahlil qilingan.",
+    type: "OAV maqolalari",
+    source: "\"Jamiyat\" gazetasi, 2026-yil 24-sentabr, 37-son",
+    cover: "/nashrlar/qadriyat-taqvimga-kirgan-sana.jpg",
+    description: "Institut xodimlari Bo'ri Qodirov va Alisher Atayevning hamkorlikdagi maqolasi.",
   },
   {
-    slug: "yoshlar-ijtimoiy-portreti",
-    title: "O'zbekiston yoshlarining ijtimoiy-ma'naviy portreti",
-    author: "Sotsiologik tadqiqotlar bo'limi",
-    year: 2025,
-    type: "Tadqiqot hisoboti",
-    pages: 156,
-    cover: "https://picsum.photos/seed/imti-book2/400/560",
-    description:
-      "Respublika miqyosidagi so'rovnoma asosida yoshlarning qadriyatlar tizimi, intilishlari va dunyoqarashi tahlili.",
+    slug: "ozbek-va-koreys-xalqlari-dostligi",
+    title: "O'zbek va koreys xalqlari do'stligining ijtimoiy ildizlari",
+    author: "Muhiddin Teshaboyev",
+    year: 2026,
+    type: "OAV maqolalari",
+    source: "\"Yangi O'zbekiston\" gazetasi, 2026-yil 23-sentabr",
+    cover: "/nashrlar/ozbek-va-koreys-xalqlari-dostligi.jpg",
+    description: "Institut bo'lim boshlig'i, falsafa fanlari doktori, dotsent M. Teshaboyevning maqolasi.",
   },
   {
-    slug: "oilaviy-tarbiya-anyanalari",
-    title: "Oilaviy tarbiya an'analari va zamonaviylik",
-    author: "M. Yusupova, D. Karimov",
-    year: 2025,
-    type: "Ilmiy-ommabop nashr",
-    pages: 198,
-    cover: "https://picsum.photos/seed/imti-book3/400/560",
-    description:
-      "O'zbek oilasidagi tarbiya an'analarining zamonaviy sharoitda transformatsiyasi haqida keng ommaga mo'ljallangan nashr.",
-  },
-  {
-    slug: "manaviy-tahdidlarga-qarshi",
-    title: "Ma'naviy tahdidlarga qarshi kurashning ilmiy asoslari",
-    author: "Ekspertiza va tahlil markazi",
-    year: 2024,
-    type: "Monografiya",
-    pages: 312,
-    cover: "https://picsum.photos/seed/imti-book4/400/560",
-    description:
-      "Zamonaviy axborot makonidagi mafkuraviy tahdidlarning tabiati va ularga qarshi profilaktik yondashuvlar.",
-  },
-  {
-    slug: "ilmiy-jurnal-2026-3",
-    title: "\"Ijtimoiy-ma'naviy tadqiqotlar\" ilmiy jurnali, 2026 / 3-son",
-    author: "Institut nashri",
+    slug: "raqamli-dunyoning-raqamli-bolalari",
+    title: "Raqamli dunyoning raqamli bolalari",
+    author: "Nigora Husanova",
     year: 2026,
     type: "Ilmiy jurnal",
-    pages: 128,
-    cover: "https://picsum.photos/seed/imti-book5/400/560",
-    description:
-      "Institutning navbatdagi ilmiy jurnal soni: mahalliy va xorijiy mualliflarning so'nggi tadqiqot natijalari.",
+    source: "\"Ma'naviy hayot\" jurnali, 2026-yil 3-son",
+    cover: "/nashrlar/raqamli-dunyoning-raqamli-bolalari.jpg",
+    description: "Bolalar va yoshlarning raqamli makondagi xavfsizligi muammolariga bag'ishlangan tahliliy maqola.",
   },
   {
-    slug: "raqamli-avlod-qadriyatlari",
-    title: "Raqamli avlod va an'anaviy qadriyatlar muvozanati",
-    author: "B. Tursunov",
-    year: 2024,
-    type: "Tadqiqot hisoboti",
-    pages: 176,
-    cover: "https://picsum.photos/seed/imti-book6/400/560",
+    slug: "vatanparvarlikning-uzilmas-tomiri",
+    title: "Vatanparvarlikning uzilmas tomiri — Vataningda qadr topmoq",
+    author: "Shahlo Ahrorova",
+    year: 2026,
+    type: "OAV maqolalari",
+    source: "\"Vatanparvar\" gazetasi, 2026-yil 18-sentabr",
+    cover: "/nashrlar/vatanparvarlikning-uzilmas-tomiri.jpg",
+    description: "Institut bosh ilmiy xodimi, \"Ma'rifat\" targ'ibotchilar jamiyati a'zosi Shahlo Ahrorovaning maqolasi.",
+  },
+  {
+    slug: "jadidchilik-risolalar-turkumi",
+    title: "Jadidchilik harakati namoyandalariga bag'ishlangan risolalar turkumi",
+    author: "Bo'ri Qodirov",
+    year: 2026,
+    type: "Ilmiy-ommabop nashr",
+    source: "\"Ma'naviyat\" nashriyoti",
+    cover: "/nashrlar/jadidchilik-risolalar-turkumi.jpg",
     description:
-      "Raqamli texnologiyalar davrida o'sib kelayotgan avlodning qadriyatlar tizimidagi o'zgarishlar tahlili.",
+      "Jadidchilik harakatining 8 nafar taniqli namoyandasi hayoti, faoliyati va ma'rifat yo'lidagi xizmatlariga bag'ishlangan risolalar turkumi.",
+  },
+  {
+    slug: "ozi-uchar-gilamlardan",
+    title: "O'zi uchar gilamlardan ekranlar qa'rigacha",
+    author: "Nigora Husanova",
+    year: 2026,
+    type: "OAV maqolalari",
+    source: "Xabar.uz",
+    url: "https://xabar.uz/6zsb",
+    cover: "/nashrlar/ozi-uchar-gilamlardan.jpg",
+    description: "Institut katta ilmiy xodimi Nigora Husanovaning tahliliy maqolasi.",
+  },
+  {
+    slug: "qilichdan-otkir-kalom",
+    title: "Qilichdan o'tkir kalom, yoxud zamonaviy targ'ibot va propaganda",
+    author: "Nigora Husanova",
+    year: 2026,
+    type: "OAV maqolalari",
+    source: "\"Vatanparvar\" gazetasi, 2026-yil 4-sentabr, 36-son",
+    cover: "/nashrlar/qilichdan-otkir-kalom.jpg",
+    description: "Institut kichik ilmiy xodimi Nigora Husanovaning maqolasi.",
+  },
+  {
+    slug: "9-11-chorak-asrlik-saboq",
+    title: "9/11: chorak asrlik saboq yoxud xavfsizlik va ma'rifat yo'li",
+    author: "A. Shermatov",
+    year: 2026,
+    type: "OAV maqolalari",
+    source: "UZA — O'zbekiston Milliy axborot agentligi",
+    url: "https://uza.uz/oz/posts/9-11-chorak-asrlik-saboq-yohud-xavfsizlik-va-marifat-yoli_907651",
+    cover: "https://picsum.photos/seed/imti-shermatov/400/560",
+    description: "Institut kichik ilmiy xodimi A. Shermatovning UZA rasmiy saytida e'lon qilingan maqolasi.",
+  },
+  {
+    slug: "marifat-qudratli-kuchga-aylanmoqda",
+    title: "Ma'rifat yana qudratli kuchga aylanmoqda, NEGA?",
+    author: "Bo'ri Qodirov",
+    year: 2026,
+    type: "OAV maqolalari",
+    source: "\"Jamiyat\" gazetasi, 2026-yil 13-avgust",
+    cover: "/nashrlar/marifat-qudratli-kuchga-aylanmoqda.jpg",
+    description: "\"Do'stlik\" ordeni sohibi, institut bo'lim boshlig'i Bo'ri Qodirovning maqolasi.",
   },
 ];

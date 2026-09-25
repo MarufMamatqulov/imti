@@ -6,77 +6,79 @@ export type ServiceItem = {
   points: string[];
 };
 
+// Manba: institut tarkibiy bo'limlarining rasmiy Nizomlari (2021–2023,
+// Respublika Ma'naviyat va ma'rifat markazi tomonidan tasdiqlangan).
+// Har bir bo'limning maqsad, vazifa va funksiyalari shu hujjatlar
+// asosida keltirilgan.
 export const SERVICES: ServiceItem[] = [
   {
-    slug: "ijtimoiy-monitoring",
-    icon: "LineChart",
-    title: "Ijtimoiy-ma'naviy monitoring",
-    description:
-      "Jamiyatdagi ma'naviy-ma'rifiy muhitni, aholi kayfiyati va ijtimoiy fikrni tizimli o'rganish va tahlil qilish.",
-    points: [
-      "Ijtimoiy so'rovnomalar va sotsiologik tadqiqotlar",
-      "Mintaqalar kesimida tahliliy hisobotlar",
-      "Yillik ma'naviy muhit indeksi",
-    ],
-  },
-  {
-    slug: "ilmiy-tadqiqot",
+    slug: "ilmiy-tadqiqotlarni-tashkil-etish",
     icon: "FlaskConical",
-    title: "Ilmiy-tadqiqot loyihalari",
+    title: "Ilmiy tadqiqotlarni tashkil etish va amalga oshirish",
     description:
-      "Milliy g'oya, ma'naviyat va ma'rifat sohasidagi dolzarb muammolar bo'yicha fundamental va amaliy tadqiqotlar.",
+      "Jamiyat barqarorligiga salbiy ta'sir etuvchi illatlarni bartaraf etish va ijtimoiy-ma'naviy muhitni yaxshilash yo'nalishida fundamental hamda amaliy tadqiqotlarni tashkil qiladi va amalga oshiradi.",
     points: [
-      "Grant asosidagi ilmiy loyihalar",
-      "Xalqaro hamkorlikdagi tadqiqotlar",
-      "Yosh tadqiqotchilarni qo'llab-quvvatlash",
+      "Ilmiy, ilmiy-amaliy faoliyat yo'nalishlarini belgilab, yillik va istiqboldagi ish rejalarini tasdiqlash",
+      "Mahalliychilik, korrupsiya, oilaviy qadriyatlarga bepisandlik kabi illatlarga qarshi kompleks chora-tadbirlar ishlab chiqish",
+      "Uzluksiz ma'naviy tarbiya samaradorligini baholashning ilmiy asoslangan indikatorlarini joriy etish",
+      "Fundamental, amaliy va innovatsion tadqiqotlarni amalga oshirib, natijalarini amaliyotga tatbiq qilish",
+      "Xorijiy ilmiy markazlar va olimlar bilan hamkorlik o'rnatish",
     ],
   },
   {
-    slug: "ekspertiza",
+    slug: "ilmiy-ekspertiza",
     icon: "ShieldCheck",
     title: "Ilmiy-ma'naviy ekspertiza",
     description:
-      "Ommaviy axborot vositalari, kontent va tashabbuslarga ma'naviy-ma'rifiy nuqtai nazardan ekspert xulosa berish.",
+      "Ommaviy axborot vositalari, nashrlar va internet tarmog'idagi kontentni g'oyaviy-mafkuraviy jihatdan ilmiy ekspertizadan o'tkazib, amaliy taklif va xulosalar tayyorlaydi.",
     points: [
-      "Mafkuraviy tahdidlarga qarshi tahlil",
-      "Kontent monitoringi va ekspertizasi",
-      "Tavsiyalar va profilaktik chora-tadbirlar",
+      "OAV, rasmiy veb-saytlar va media mahsulotlarini ilmiy ekspertizadan o'tkazish",
+      "Nashrga tayyorlangan ilmiy va ilmiy-ommabop adabiyotlar ekspertizasini amalga oshirish",
+      "Sohaga oid olimlar va mutaxassislardan iborat ekspertlar guruhini shakllantirish",
+      "Doktorant va mustaqil izlanuvchilarning ilmiy ishlarini tahlil qilib, takliflar berish",
+      "Davlat va xususiy nashriyotlar bilan doimiy hamkorlikni tashkil etish",
     ],
   },
   {
-    slug: "targibot",
-    icon: "Megaphone",
-    title: "Ma'rifiy-tarbiyaviy targ'ibot",
+    slug: "ijtimoiy-manaviy-muhitni-tahlil-qilish",
+    icon: "LineChart",
+    title: "Ijtimoiy-ma'naviy muhitni tahlil qilish",
     description:
-      "Aholi, ayniqsa yoshlar orasida milliy g'oya va umuminsoniy qadriyatlarni targ'ib qiluvchi loyihalar.",
+      "Mamlakatdagi ijtimoiy-ma'naviy muhit holatini muntazam monitoring qilib, tahlil va baholaydi hamda uni yaxshilashga qaratilgan zamonaviy targ'ibot texnologiyalarini ishlab chiqadi.",
     points: [
-      "Respublika miqyosidagi ma'rifiy aksiyalar",
-      "Multimedia va ijtimoiy tarmoq loyihalari",
-      "Mintaqalararo forumlar va uchrashuvlar",
+      "Ijtimoiy-ma'naviy muhit holatini muntazam monitoring qilish va baholash",
+      "Jamiyat barqarorligiga tahdid soluvchi omillar yuzasidan ilmiy-amaliy izlanishlar olib borish",
+      "Dunyoning mafkuraviy manzarasini o'rganish va tahlil qilish",
+      "Milliy manfaatlarga qarshi g'oyaviy-axborot hujumlari dinamikasini kuzatish",
+      "Zamonaviy targ'ibot texnologiyalarini ishlab chiqish va joriy etish",
     ],
   },
   {
     slug: "malaka-oshirish",
     icon: "GraduationCap",
-    title: "Malaka oshirish va treninglar",
+    title: "Malaka oshirish va uslubiy ta'minot",
     description:
-      "Ma'naviyat-ma'rifat sohasi mutaxassislari uchun uzluksiz kasbiy rivojlanish dasturlari.",
+      "Ma'naviy-ma'rifiy targ'ibotga mas'ul mutasaddi xodimlarning kasbiy malakasini oshirish bo'yicha o'quv kurslari, seminar va treninglarni tashkil etadi.",
     points: [
-      "Seminar-treninglar va vebinarlar",
-      "Malaka oshirish sertifikat dasturlari",
-      "Metodik qo'llanmalar tayyorlash",
+      "Davlat siyosati va islohotlar mohiyatini tushuntiruvchi o'quv tizimini yo'lga qo'yish",
+      "Millatlararo totuvlik, bag'rikenglik va o'zaro hurmat mavzularida o'quvlar tashkil etish",
+      "Din va diniy masalalar, voizlik madaniyatini chuqur o'rganishni yo'lga qo'yish",
+      "Kadrlar malakasini oshirish tizimini takomillashtirish bo'yicha takliflar ishlab chiqish",
+      "O'quv kurslari tinglovchilariga sertifikatlarni rasmiylashtirish",
     ],
   },
   {
-    slug: "xalqaro-hamkorlik",
-    icon: "Globe2",
-    title: "Xalqaro hamkorlik",
+    slug: "milliy-goya-targibot-metodik-taminlash",
+    icon: "Megaphone",
+    title: "Milliy g'oya va targ'ibot ishlarini metodik ta'minlash",
     description:
-      "Xorijiy ilmiy-tadqiqot markazlari va xalqaro tashkilotlar bilan tajriba almashish va qo'shma loyihalar.",
+      "Targ'ibotchilar uchun uslubiy qo'llanma, ma'ruza matni, risola va ko'rgazmali materiallar tayyorlab, targ'ibot ishlarining zamonaviy usul va uslublarini ishlab chiqadi.",
     points: [
-      "Qo'shma ilmiy konferensiyalar",
-      "Akademik almashinuv dasturlari",
-      "Xalqaro nashrlarda hamkorlik",
+      "Tadbir, davra suhbati va ochiq muloqotlar uchun uslubiy qo'llanma va ma'ruza matnlari tayyorlash",
+      "Ichki va tashqi mafkuraviy tahdidlarga qarshi kompleks tadbirlarga metodik tavsiyalar ishlab chiqish",
+      "Tarixiy meros va milliy tarbiya an'analarini asrab-avaylashga qaratilgan targ'ibot metodlarini ishlab chiqish",
+      "Milliy g'oya mavzusidagi ilmiy-amaliy konferensiya va davra suhbatlari o'tkazish usullarini yaratish",
+      "\"Tafakkur\", \"Ma'naviy hayot\", \"Jahon adabiyoti\" jurnallari orqali targ'ibot natijalarini jamoatchilikka yetkazish",
     ],
   },
 ];
