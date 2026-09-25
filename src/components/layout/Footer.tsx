@@ -29,7 +29,7 @@ export default function Footer() {
           <div>
             <Link href="/" className="flex items-center gap-3 mb-4">
               <span className="relative flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-xl">
-                <Image src="/logo-mark.png" alt={`${SITE.shortName} logotipi`} fill sizes="44px" className="object-cover" />
+                <Image src="/logo-mark-white.png" alt={`${SITE.shortName} logotipi`} fill sizes="44px" className="object-contain" />
               </span>
               <span className="text-white font-extrabold text-lg tracking-tight">{SITE.shortName}</span>
             </Link>

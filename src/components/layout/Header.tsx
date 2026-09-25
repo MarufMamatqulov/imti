@@ -36,7 +36,7 @@ export default function Header() {
         <Container className="flex items-center justify-between gap-4 py-3">
           <Link href="/" className="flex items-center gap-3 shrink-0">
             <span className="relative flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-md border border-line">
-              <Image src="/logo-mark.png" alt={`${SITE.shortName} logotipi`} fill sizes="48px" className="object-cover" />
+              <Image src="/logo-mark.png" alt={`${SITE.shortName} logotipi`} fill sizes="48px" className="object-contain p-1" />
             </span>
             <span className="leading-tight">
               <span className="block text-[15px] sm:text-base font-extrabold uppercase text-primary-950 tracking-tight">
