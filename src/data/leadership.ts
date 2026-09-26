@@ -37,7 +37,7 @@ export const LEADERSHIP: LeadershipMember[] = [
     bioIntro: "Pedagogika fanlari doktori, professor.",
     workHistory: [
       { period: "Ilgari", role: "Respublika Ma'naviyat va Ma'rifat markazi direktorining ilmiy-nazariy va uslubiy masalalar bo'yicha birinchi o'rinbosari" },
-      { period: "2026-yil 20-avgustdan h.v.", role: "Respublika Ma'naviyat va Ma'rifat markazi huzuridagi Ijtimoiy-Ma'naviy Tadqiqotlar Instituti direktori" },
+      { period: "2026-yil 20-avgustdan h.v.", role: "Respublika Ma'naviyat va Ma'rifat markazi huzuridagi Ijtimoiy-ma'naviy tadqiqotlar instituti direktori" },
     ],
     receptionDay: "Oldindan yozilish asosida",
     phone: "+998 55 510 27 37",

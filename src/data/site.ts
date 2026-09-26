@@ -6,16 +6,16 @@
 // Ma'rifat Markazining rasmiy (manaviyat.uz) kontaktlari keltirilgan.
 // Institut o'zining alohida raqami/emailiga ega bo'lsa, shu yerda almashtiring.
 export const SITE = {
-  domain: "https://www.imt-institut.uz",
+  domain: "https://imtitut.uz",
   shortName: "IMTI",
   fullNameUz:
-    "Respublika Ma'naviyat va Ma'rifat Markazi huzuridagi Ijtimoiy-Ma'naviy Tadqiqotlar Instituti",
+    "Respublika Ma'naviyat va Ma'rifat Markazi huzuridagi Ijtimoiy-ma'naviy tadqiqotlar instituti",
   parentOrg: "Respublika Ma'naviyat va Ma'rifat Markazi",
   tagline: "Ma'naviyat ilm bilan, jamiyat tadqiqot bilan mustahkam",
   description:
-    "Ijtimoiy-Ma'naviy Tadqiqotlar Instituti — Vazirlar Mahkamasining 2021-yil 3-iyundagi 340-son qarori bilan tashkil etilgan, jamiyatdagi ijtimoiy-ma'naviy muhitni ilmiy asosda tadqiq etuvchi, zamonaviy targ'ibot texnologiya va usullarini ishlab chiquvchi, aholining, ayniqsa yoshlarning mafkuraviy immunitetini mustahkamlashga xizmat qiluvchi ilmiy-tadqiqot muassasasi.",
+    "Ijtimoiy-ma'naviy tadqiqotlar instituti — Vazirlar Mahkamasining 2021-yil 3-iyundagi 340-son qarori bilan tashkil etilgan, jamiyatdagi ijtimoiy-ma'naviy muhitni ilmiy asosda tadqiq etuvchi, zamonaviy targ'ibot texnologiya va usullarini ishlab chiquvchi, aholining, ayniqsa yoshlarning mafkuraviy immunitetini mustahkamlashga xizmat qiluvchi ilmiy-tadqiqot muassasasi.",
   founded: 2021,
-  address: "Toshkent shahri, Yakkasaroy tumani, Bobur ko'chasi, 9-uy, 3-qavat",
+  address: "Toshkent shahri, Yakkasaroy tumani, Bobur ko'chasi, 9-uy",
   phone: "+998 55 510 27 37",
   email: "info@manaviyat.uz",
   workHours: "Dushanba – Juma, 09:00 – 18:00",

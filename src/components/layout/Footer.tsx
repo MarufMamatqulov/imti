@@ -28,8 +28,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div>
             <Link href="/" className="flex items-center gap-3 mb-4">
-              <span className="relative flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-xl">
-                <Image src="/logo-mark-white.png" alt={`${SITE.shortName} logotipi`} fill sizes="44px" className="object-contain" />
+              <span className="relative flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-xl">
+                <Image src="/logo-mark-white.png" alt={`${SITE.shortName} logotipi`} fill sizes="56px" className="object-contain" />
               </span>
               <span className="text-white font-extrabold text-lg tracking-tight">{SITE.shortName}</span>
             </Link>

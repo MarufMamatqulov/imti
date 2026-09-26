@@ -37,7 +37,7 @@ const timeline = [
   {
     year: "2021",
     title: "Institut tashkil etildi",
-    text: "Vazirlar Mahkamasining 2021-yil 3-iyundagi 340-son qarori bilan Respublika Ma'naviyat va Ma'rifat Markazi huzurida Ijtimoiy-Ma'naviy Tadqiqotlar Instituti faoliyati tashkil etildi.",
+    text: "Vazirlar Mahkamasining 2021-yil 3-iyundagi 340-son qarori bilan Respublika Ma'naviyat va Ma'rifat Markazi huzurida Ijtimoiy-ma'naviy tadqiqotlar instituti faoliyati tashkil etildi.",
   },
   {
     year: "2022",

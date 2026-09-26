@@ -22,7 +22,7 @@ export const DOCUMENT_CATEGORIES = [
 // hujjatlar uchun oyning boshi qo'yilgan.
 export const DOCUMENTS: DocumentItem[] = [
   {
-    title: "Ijtimoiy-Ma'naviy Tadqiqotlar Instituti USTAVI",
+    title: "Ijtimoiy-ma'naviy tadqiqotlar instituti USTAVI",
     category: "Institut ustavi",
     date: "2021-06-04",
     fileType: "PDF",

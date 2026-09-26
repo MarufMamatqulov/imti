@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   description: SITE.description,
   keywords: [
     "IMTI",
-    "Ijtimoiy-Ma'naviy Tadqiqotlar Instituti",
+    "Ijtimoiy-ma'naviy tadqiqotlar instituti",
     "Ma'naviyat va Ma'rifat Markazi",
     "ilmiy tadqiqot",
     "ma'naviyat",

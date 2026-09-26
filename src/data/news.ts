@@ -7,6 +7,10 @@ export type NewsItem = {
   category: string;
   image: string;
   views: number;
+  // true bo'lsa, bosh sahifada (Hero, Yangiliklar bo'limi) sanadan qat'i
+  // nazar doimo birinchi bo'lib chiqadi. Arxiv sahifasi (/yangiliklar)
+  // buni hisobga olmaydi, u doim xronologik tartibda qoladi.
+  pinned?: boolean;
 };
 
 export const NEWS_CATEGORIES = [
@@ -30,7 +34,7 @@ export const NEWS: NewsItem[] = [
     excerpt:
       "Institut 09.00.07, 09.00.08 va 09.00.09 ixtisosliklari bo'yicha mustaqil izlanuvchilikka hujjatlar qabulini e'lon qildi.",
     content: [
-      "Respublika Ma'naviyat va ma'rifat markazi huzuridagi Ijtimoiy-Ma'naviy Tadqiqotlar Instituti 09.00.07 — \"Ma'naviyat tarixi va nazariyasi\", 09.00.08 — \"Ma'naviy tarbiya\" va 09.00.09 — \"Ma'naviy jarayonlar va texnologiyalar\" ixtisosliklari bo'yicha (DSc hamda PhD) mustaqil izlanuvchilikka qabulni e'lon qildi.",
+      "Respublika Ma'naviyat va ma'rifat markazi huzuridagi Ijtimoiy-ma'naviy tadqiqotlar instituti 09.00.07 — \"Ma'naviyat tarixi va nazariyasi\", 09.00.08 — \"Ma'naviy tarbiya\" va 09.00.09 — \"Ma'naviy jarayonlar va texnologiyalar\" ixtisosliklari bo'yicha (DSc hamda PhD) mustaqil izlanuvchilikka qabulni e'lon qildi.",
       "Talabgorlardan quyidagi hujjatlar talab etiladi: oliy ta'lim muassasasi magistraturasi diplomi (yoki nusxasi), kamida 1 ta maqola va 2 ta tezis, qisqacha biografik ma'lumotnoma hamda ish joyidan tavsifnoma. Hujjatlar Yagona elektron tizim (daraja.ilmiy.uz) orqali qabul qilinadi.",
     ],
     date: "2026-07-20",
@@ -44,7 +48,7 @@ export const NEWS: NewsItem[] = [
     excerpt:
       "Prezidentimiz farmoniga muvofiq, institut bo'lim boshlig'i Kadirov Buri Xudayshukurovich \"Do'stlik\" ordeni bilan taqdirlandi.",
     content: [
-      "O'zbekiston Respublikasi Prezidentining farmoniga muvofiq, Respublika Ma'naviyat va ma'rifat markazi huzuridagi Ijtimoiy-Ma'naviy Tadqiqotlar Instituti bo'lim boshlig'i Kadirov Buri Xudayshukurovich mamlakatimiz taraqqiyotiga qo'shgan hissasi uchun \"Do'stlik\" ordeni bilan taqdirlandi.",
+      "O'zbekiston Respublikasi Prezidentining farmoniga muvofiq, Respublika Ma'naviyat va ma'rifat markazi huzuridagi Ijtimoiy-ma'naviy tadqiqotlar instituti bo'lim boshlig'i Kadirov Buri Xudayshukurovich mamlakatimiz taraqqiyotiga qo'shgan hissasi uchun \"Do'stlik\" ordeni bilan taqdirlandi.",
     ],
     date: "2026-08-22",
     category: "Ilmiy hayot",
@@ -58,7 +62,7 @@ export const NEWS: NewsItem[] = [
     excerpt:
       "Samarqand davlat universitetida institut hamda hamkor tashkilotlar ishtirokida respublika ilmiy-amaliy konferensiyasi tashkil etildi.",
     content: [
-      "2026-yil 22-avgust kuni Samarqand shahrida, Samarqand davlat universiteti bosh binosida \"Ma'naviy islohotlarning yangi bosqichida targ'ibot ishlarining ilmiy-metodik muammolari\" mavzusidagi respublika ilmiy-amaliy konferensiyasi bo'lib o'tdi. Tadbir Respublika Ma'naviyat va ma'rifat markazi, Ijtimoiy-Ma'naviy Tadqiqotlar Instituti, Fanlar akademiyasi va \"Ma'rifat\" targ'ibotchilar jamiyati hamkorligida tashkil etilgan.",
+      "2026-yil 22-avgust kuni Samarqand shahrida, Samarqand davlat universiteti bosh binosida \"Ma'naviy islohotlarning yangi bosqichida targ'ibot ishlarining ilmiy-metodik muammolari\" mavzusidagi respublika ilmiy-amaliy konferensiyasi bo'lib o'tdi. Tadbir Respublika Ma'naviyat va ma'rifat markazi, Ijtimoiy-ma'naviy tadqiqotlar instituti, Fanlar akademiyasi va \"Ma'rifat\" targ'ibotchilar jamiyati hamkorligida tashkil etilgan.",
       "Konferensiya olti yo'nalish bo'yicha ish olib bordi: ma'naviy islohotlarning nazariy-falsafiy asoslari, targ'ibot ishlarining ilmiy-metodik asoslari, raqamli jamiyatda ma'naviy targ'ibot, yoshlar ma'naviyati va fuqarolik mas'uliyati, milliy meros va Uchinchi Renessans g'oyalari, hamda global tahdidlar sharoitida milliy o'zlikni saqlash masalalari.",
       "Mamlakatimiz mustaqilligining 35 yilligiga bag'ishlangan konferensiya materiallari to'plam sifatida chop etildi.",
     ],
@@ -87,7 +91,7 @@ export const NEWS: NewsItem[] = [
     excerpt:
       "Institut, Respublika Ma'naviyat va Ma'rifat markazi hamda \"Ma'rifat\" targ'ibotchilar jamiyati hamkorlikda \"O'zbek to'ylaridagi isrofgarchilik\" mavzusida maqolalar tanlovini e'lon qildi.",
     content: [
-      "Respublika Ma'naviyat va Ma'rifat markazi, Ijtimoiy-Ma'naviy Tadqiqotlar Instituti va \"Ma'rifat\" targ'ibotchilar jamiyati hamkorligida \"Maromiylik\" loyihasi doirasida \"O'zbek to'ylaridagi isrofgarchilik — an'ana va zamon ziddiyatlari\" hamda \"Maromiylik\" mavzusida maqolalar tanlovi e'lon qilindi.",
+      "Respublika Ma'naviyat va Ma'rifat markazi, Ijtimoiy-ma'naviy tadqiqotlar instituti va \"Ma'rifat\" targ'ibotchilar jamiyati hamkorligida \"Maromiylik\" loyihasi doirasida \"O'zbek to'ylaridagi isrofgarchilik — an'ana va zamon ziddiyatlari\" hamda \"Maromiylik\" mavzusida maqolalar tanlovi e'lon qilindi.",
       "Tanlovda ilmiy xodimlar, tadqiqotchilar, oliy ta'lim muassasalari o'qituvchilari, doktorantlar, mustaqil tadqiqotchilar, jurnalistlar va ushbu mavzuga qiziqqan barcha fuqarolar ishtirok etishlari mumkin.",
     ],
     date: "2025-12-18",
@@ -114,7 +118,7 @@ export const NEWS: NewsItem[] = [
     excerpt:
       "Institut va FVV Akademiyasi o'rtasida ikki tomonlama hamkorlik memorandumi imzolandi.",
     content: [
-      "Respublika Ma'naviyat va ma'rifat markazi huzuridagi Ijtimoiy-Ma'naviy Tadqiqotlar Instituti hamda FVV Akademiyasi o'rtasida ikki tomonlama hamkorlik memorandumi imzolandi.",
+      "Respublika Ma'naviyat va ma'rifat markazi huzuridagi Ijtimoiy-ma'naviy tadqiqotlar instituti hamda FVV Akademiyasi o'rtasida ikki tomonlama hamkorlik memorandumi imzolandi.",
       "Memorandum doirasida tomonlar ma'naviy-ma'rifiy tadqiqotlar, birgalikdagi ilmiy-amaliy tadbirlar va kadrlar tayyorlash sohasida hamkorlikni yo'lga qo'yish bo'yicha kelishib oldilar.",
     ],
     date: "2025-09-23",
@@ -129,7 +133,7 @@ export const NEWS: NewsItem[] = [
     excerpt:
       "\"Mafkuraviy tahdiddan himoyalanish emas, hujumga o'tish kerak\" shiori ostida respublika ilmiy-amaliy konferensiyasi bo'lib o'tdi, konferensiya materiallari to'plam sifatida chop etildi.",
     content: [
-      "Respublika Ma'naviyat va ma'rifat markazi huzuridagi Ijtimoiy-Ma'naviy Tadqiqotlar Instituti tomonidan \"Mafkuraviy tahdidlarning ma'naviy jarayonlar rivojiga ta'siri va uni oldini olish mexanizmlari\" mavzusida respublika ilmiy-amaliy konferensiyasi o'tkazildi.",
+      "Respublika Ma'naviyat va ma'rifat markazi huzuridagi Ijtimoiy-ma'naviy tadqiqotlar instituti tomonidan \"Mafkuraviy tahdidlarning ma'naviy jarayonlar rivojiga ta'siri va uni oldini olish mexanizmlari\" mavzusida respublika ilmiy-amaliy konferensiyasi o'tkazildi.",
       "Konferensiya materiallari alohida to'plam sifatida nashr etilib, ishtirokchilarga taqdim etildi. (Batafsil: oyina.uz)",
     ],
     date: "2025-09-11",
@@ -154,9 +158,9 @@ export const NEWS: NewsItem[] = [
     slug: "kembrij-universitetiga-tashrif",
     title: "Institut delegatsiyasi Kembrij universitetiga tashrif buyurdi",
     excerpt:
-      "Ijtimoiy-Ma'naviy Tadqiqotlar Instituti delegatsiyasi Buyuk Britaniyaning Kembrij universitetiga xalqaro tajriba almashish tashrifini amalga oshirdi.",
+      "Ijtimoiy-ma'naviy tadqiqotlar instituti delegatsiyasi Buyuk Britaniyaning Kembrij universitetiga xalqaro tajriba almashish tashrifini amalga oshirdi.",
     content: [
-      "Ijtimoiy-Ma'naviy Tadqiqotlar Instituti delegatsiyasi Buyuk Britaniyaning nufuzli oliygohlaridan biri — Kembrij universitetiga tashrif buyurdi. Tashrif haqida \"Axborot 24\" teleradiokanali alohida reportaj tayyorladi.",
+      "Ijtimoiy-ma'naviy tadqiqotlar instituti delegatsiyasi Buyuk Britaniyaning nufuzli oliygohlaridan biri — Kembrij universitetiga tashrif buyurdi. Tashrif haqida \"Axborot 24\" teleradiokanali alohida reportaj tayyorladi.",
     ],
     date: "2024-12-19",
     category: "Xalqaro hamkorlik",
@@ -169,7 +173,7 @@ export const NEWS: NewsItem[] = [
     excerpt:
       "Institut va Mirzo Ulug'bek nomidagi O'zbekiston Milliy universiteti hamkorligida tashkil etilgan konferensiyada taniqli olimlar va yosh tadqiqotchilar qatnashdi.",
     content: [
-      "Respublika Ma'naviyat va ma'rifat markazi huzuridagi Ijtimoiy-Ma'naviy Tadqiqotlar Instituti va Mirzo Ulug'bek nomidagi O'zbekiston Milliy universiteti hamkorligida \"Yangi O'zbekiston: ma'naviy jarayonlar va mafkuraviy tahdidlar\" mavzusida respublika ilmiy-amaliy konferensiyasi tashkil etildi.",
+      "Respublika Ma'naviyat va ma'rifat markazi huzuridagi Ijtimoiy-ma'naviy tadqiqotlar instituti va Mirzo Ulug'bek nomidagi O'zbekiston Milliy universiteti hamkorligida \"Yangi O'zbekiston: ma'naviy jarayonlar va mafkuraviy tahdidlar\" mavzusida respublika ilmiy-amaliy konferensiyasi tashkil etildi.",
       "Konferensiya ishida taniqli professor va olimlar, shuningdek yosh tadqiqotchilar o'z ilmiy izlanishlari yuzasidan qarash va xulosalarini bayon qildilar. Tadbir falsafa, pedagogika, psixologiya va siyosat yo'nalishlarini qamrab oldi. (Batafsil: uza.uz)",
     ],
     date: "2024-09-17",
@@ -184,12 +188,33 @@ export const NEWS: NewsItem[] = [
     excerpt:
       "Institut tashabbusi bilan yoshlarning ijtimoiy faolligini oshirish va ma'naviyatini yuksaltirish masalalariga bag'ishlangan ilmiy-amaliy anjuman tashkil etildi.",
     content: [
-      "Ijtimoiy-Ma'naviy Tadqiqotlar Instituti tomonidan \"Yoshlar ijtimoiy faolligini oshirish va ma'naviyatni yuksaltirishning zamonaviy texnologiyalari\" mavzusida ilmiy-amaliy anjuman o'tkazildi.",
+      "Ijtimoiy-ma'naviy tadqiqotlar instituti tomonidan \"Yoshlar ijtimoiy faolligini oshirish va ma'naviyatni yuksaltirishning zamonaviy texnologiyalari\" mavzusida ilmiy-amaliy anjuman o'tkazildi.",
     ],
     date: "2024-06-03",
     category: "Ilmiy hayot",
     image: "/news/yoshlar-ijtimoiy-faolligi-anjumani.jpg",
     views: 1046,
+  },
+  {
+    slug: "biz-bolganmiz-bormiz-bolamiz",
+    title: "Biz bo'lganmiz! Bormiz! Bo'lamiz!",
+    excerpt:
+      "Professor Muhammadjon Quronovning millat o'zligi, vatanparvarlik va tarixiy haqiqat mavzusidagi fikr-mulohazasi.",
+    content: [
+      "Johil odam soqol qo'yib, ko'zini olaytirib, qo'lini siltab so'zlagani bilan olim bo'lib qolmaydi.",
+      "NTV telekanalida bir sharlatanni tutib kelib gapirtirishibdi. Nima emish: \"o'zbeklar hech qachon bo'lmagan emish\". Albatta, bu gapga uning o'zi ham ishonmaydi. Bir vaqtlar ana shu \"yo'q\" o'zbeklar Amir Temur bilan borib, uning xalqini qirg'indan saqlab qolganini har bir maktab o'quvchisi biladi.",
+      "Unda nega aytdi? Chunki ko'rinishi olimsifat, noshukr, olchoqni topib, shunday dedirish NTVga kerak bo'lgan. Bu mafkura masalasi.",
+      "Nega? Chunki O'zbekiston kuchayib boryapti. \"Yangi O'zbekiston\", \"Toshkent\", \"Samarqand\", degan so'zlar jahon trendiga chiqdi. Bu davlat birovga bo'ysunmay, dadil rivojlanyapti. Eng muhimi – uning ko'zga tashlanayotgan ertangi qudrati. Bugungi O'zbekiston xalqining shiddati g'ashini keltiryapti xorij ideologlarini. Ularga qolsa, o'zbeklar hech qachon bo'lmasa. \"O'zbekiston Respublikasi\", degan davlat bo'lmasa...",
+      "Xalqimiz bilgich. \"Mevali daraxtga tosh otiladi\", deydi. NTV o'zbekning chappar urib gullayotgan daraxtiga tosh otyapti. \"Mevasi bizga tegmaydimi, hech kimga tegmasin\", deb. Lekin biz bugun kechagi, og'zidagini oldirib qo'yadigan o'zbeklar emasmiz. Tosh otganning toshini olib, ikki ko'zining o'rtasidan uramiz.",
+      "Xullas, aziz vatandoshlar! Aziz ziyolilar! Hurmatli Prezidentimiz aytganlaridek, bu yorug' dunyoda \"o'zbek\", \"O'zbekiston\" degan nomlar bilan yashash uchun kurashishimiz kerakligi yana bir marta o'z tasdig'ini topdi. Ertaga kech bo'ladi.",
+      "O'zligimizni ko'ksimizda asrab, bir-birimizga jonu jigar bo'lishimiz kerak. Biz birlashsak, bizni to'xtata oladigan kuch yo'q. Biz bo'lganmiz! Bormiz! Bo'lamiz!",
+      "Muhammadjon Quronov, professor",
+    ],
+    date: "2024-01-29",
+    category: "Ma'rifiy tadbirlar",
+    image: "/news/biz-bolganmiz-bormiz-bolamiz.jpg",
+    views: 3121,
+    pinned: true,
   },
 ];
 
@@ -199,7 +224,11 @@ export function getNewsBySlug(slug: string) {
 
 export function getLatestNews(count: number) {
   return [...NEWS]
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .sort((a, b) => {
+      if (a.pinned && !b.pinned) return -1;
+      if (!a.pinned && b.pinned) return 1;
+      return new Date(b.date).getTime() - new Date(a.date).getTime();
+    })
     .slice(0, count);
 }
 

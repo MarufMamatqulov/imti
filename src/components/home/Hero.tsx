@@ -1,12 +1,15 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { ArrowRight, PlayCircle, BadgeCheck, Sparkles } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
+import { ArrowRight, CalendarDays } from "lucide-react";
+import clsx from "clsx";
 import Container from "@/components/ui/Container";
-import Button from "@/components/ui/Button";
 import { SITE } from "@/data/site";
+import { getLatestNews } from "@/data/news";
+import { formatDate } from "@/lib/format";
 
 const quickLinks = [
   { label: "Institut haqida", href: "/institut" },
@@ -17,7 +20,23 @@ const quickLinks = [
   { label: "Aloqa", href: "/aloqa" },
 ];
 
+const heroNews = getLatestNews(5);
+const SLIDE_INTERVAL_MS = 6000;
+
 export default function Hero() {
+  const [index, setIndex] = useState(0);
+  const [paused, setPaused] = useState(false);
+
+  useEffect(() => {
+    if (paused || heroNews.length <= 1) return;
+    const id = setInterval(() => {
+      setIndex((prev) => (prev + 1) % heroNews.length);
+    }, SLIDE_INTERVAL_MS);
+    return () => clearInterval(id);
+  }, [paused]);
+
+  const current = heroNews[index];
+
   return (
     <section className="relative overflow-hidden bg-primary-950 text-white">
       <Image
@@ -30,87 +49,84 @@ export default function Hero() {
       />
       <div className="absolute inset-0 bg-gradient-to-r from-primary-950 via-primary-950/90 to-primary-950/60" />
 
-      <Container className="relative grid grid-cols-1 lg:grid-cols-[1fr_0.85fr] gap-12 py-16 sm:py-20 lg:py-28">
+      <Container className="relative grid grid-cols-1 lg:grid-cols-[1fr_0.85fr] gap-12 py-10 sm:py-12 lg:py-14">
         <div>
-          <motion.span
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.35 }}
-            className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary-200"
-          >
-            <Sparkles className="h-3.5 w-3.5" />
-            {SITE.parentOrg} huzurida
-          </motion.span>
+          <p className="flex items-center gap-2 text-sm font-bold tracking-wide text-primary-200 mb-5">
+            {SITE.shortName}
+            <span className="h-1 w-1 rounded-full bg-primary-200/50" />
+            Ijtimoiy-ma&apos;naviy tadqiqotlar instituti
+          </p>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: 0.05 }}
-            className="mt-4 text-4xl sm:text-5xl lg:text-[3.2rem] font-extrabold leading-[1.08] tracking-tight text-balance"
-          >
-            Ijtimoiy-Ma&apos;naviy Tadqiqotlar Instituti
-          </motion.h1>
+          {current && (
+            <div
+              onMouseEnter={() => setPaused(true)}
+              onMouseLeave={() => setPaused(false)}
+            >
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={current.slug}
+                  initial={{ opacity: 0, x: 40 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -40 }}
+                  transition={{ duration: 0.45, ease: "easeInOut" }}
+                >
+                  <Link
+                    href={`/yangiliklar/${current.slug}`}
+                    className="relative block aspect-[16/9] w-full overflow-hidden rounded-md border border-white/15"
+                  >
+                    <Image
+                      src={current.image}
+                      alt={current.title}
+                      fill
+                      sizes="(min-width: 1024px) 620px, 100vw"
+                      className="object-cover"
+                    />
+                  </Link>
 
-          <motion.p
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: 0.1 }}
-            className="mt-6 max-w-xl text-base sm:text-lg text-white/75 leading-relaxed"
-          >
-            {SITE.description}
-          </motion.p>
+                  <div className="mt-5 min-w-0 min-h-[120px] sm:min-h-[135px]">
+                    <span className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary-200">
+                      <CalendarDays className="h-3.5 w-3.5" />
+                      {current.category} · {formatDate(current.date)}
+                    </span>
 
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: 0.15 }}
-            className="mt-9 flex flex-wrap items-center gap-4"
-          >
-            <Button href="/institut" size="lg" icon={<ArrowRight className="h-4 w-4" />}>
-              Institut haqida
-            </Button>
-            <Button href="/nashrlar" variant="outline-light" size="lg" icon={<PlayCircle className="h-4 w-4" />}>
-              Nashrlarni ko&apos;rish
-            </Button>
-          </motion.div>
+                    <Link href={`/yangiliklar/${current.slug}`} className="group block">
+                      <h1 className="mt-3 text-xl sm:text-2xl lg:text-[2rem] font-extrabold leading-[1.2] tracking-tight text-balance line-clamp-2 group-hover:text-primary-200 transition-colors">
+                        {current.title}
+                      </h1>
+                    </Link>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.4, delay: 0.25 }}
-            className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm text-white/70"
-          >
-            <span className="flex items-center gap-2">
-              <BadgeCheck className="h-4 w-4 text-primary-300" /> {SITE.founded}-yildan buyon faoliyat
-            </span>
-            <span className="flex items-center gap-2">
-              <BadgeCheck className="h-4 w-4 text-primary-300" /> Davlat va xalqaro miqyosda tan olingan
-            </span>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.4, delay: 0.3 }}
-            className="mt-8 flex items-center gap-8 border-t border-white/15 pt-6 text-white"
-          >
-            <div>
-              <p className="text-2xl font-extrabold">340+</p>
-              <p className="text-xs text-white/60 mt-0.5">Nashr etilgan ilmiy ish</p>
+                    <p className="mt-4 max-w-xl text-sm sm:text-base text-white/75 leading-relaxed line-clamp-2">
+                      {current.excerpt}
+                    </p>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
             </div>
-            <span className="h-8 w-px bg-white/15" />
-            <div>
-              <p className="text-2xl font-extrabold">45+</p>
-              <p className="text-xs text-white/60 mt-0.5">Xalqaro hamkor tashkilot</p>
+          )}
+
+          {heroNews.length > 1 && (
+            <div className="mt-2 flex items-center gap-2">
+              {heroNews.map((item, i) => (
+                <button
+                  key={item.slug}
+                  type="button"
+                  aria-label={`${i + 1}-yangilikni ko'rsatish`}
+                  onClick={() => setIndex(i)}
+                  className={clsx(
+                    "h-1.5 rounded-full transition-all",
+                    i === index ? "w-6 bg-white" : "w-1.5 bg-white/30 hover:bg-white/50"
+                  )}
+                />
+              ))}
             </div>
-          </motion.div>
+          )}
         </div>
 
         <motion.nav
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.4, delay: 0.2 }}
-          className="lg:justify-self-end lg:self-center w-full max-w-xs"
+          className="lg:justify-self-end lg:self-start w-full max-w-xs"
         >
           <p className="text-xs font-bold uppercase tracking-widest text-primary-200 mb-3">
             Tezkor havolalar
