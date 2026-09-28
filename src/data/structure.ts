@@ -17,7 +17,6 @@ export const STRUCTURE_MEMBERS: LeadershipMember[] = [
       "Ilmiy anjuman, konferensiya va nashrlar rejasini muvofiqlashtirish",
       "Ilmiy xodimlarning attestatsiya va malaka oshirish jarayonlarini boshqarish",
     ],
-    bioIntro: "1993-yilda Mirzo Ulug'bek nomidagi O'zbekiston Milliy universitetiga o'qishga kirgan.",
     workHistory: [
       { period: "1993–1998", role: "Mirzo Ulug'bek nomidagi O'zbekiston Milliy universiteti talabasi" },
       { period: "1998–2012", role: "Toshkent davlat agrar universiteti Falsafa kafedrasi assistenti" },
@@ -45,7 +44,6 @@ export const STRUCTURE_MEMBERS: LeadershipMember[] = [
       "Seminar-treninglar, vebinarlar va uslubiy qo'llanmalar tayyorlashni muvofiqlashtirish",
       "Bo'lim faoliyatini rejalashtirish va uning ijrosini ta'minlash",
     ],
-    bioIntro: "2009-yilda O'zbekiston Milliy universitetiga o'qishga kirgan, keyinchalik xalqaro munosabatlar yo'nalishida magistraturani tamomlagan.",
     workHistory: [
       { period: "2009–2013", role: "O'zbekiston Milliy universiteti Falsafa fakulteti Siyosatshunoslik yo'nalishi kunduzgi bo'lim talabasi" },
       { period: "2013–2014", role: "Toshkent davlat farmatsevtika instituti qoshidagi akademik litseyda to'garak rahbari, ma'naviy-ma'rifiy ishlar bo'yicha yordamchi" },
@@ -71,7 +69,6 @@ export const STRUCTURE_MEMBERS: LeadershipMember[] = [
       "Mafkuraviy tahdidlarga qarshi tahliliy xulosalar tayyorlash",
       "Bo'lim ilmiy-ekspert guruhi faoliyatini muvofiqlashtirish",
     ],
-    bioIntro: "1980-yildan Termiz davlat universitetida pedagogik faoliyatini boshlagan.",
     workHistory: [
       { period: "1980–1993", role: "Termiz davlat universiteti umumiy tarix kafedrasi o'qituvchisi, katta o'qituvchisi" },
       { period: "1993–1995", role: "Termiz davlat universiteti tarix fakulteti dekani o'rinbosari" },
@@ -101,7 +98,6 @@ export const STRUCTURE_MEMBERS: LeadershipMember[] = [
       "Zamonaviy raqamli tahlil vositalari va texnologiyalarini joriy etish",
       "Monitoring natijalari asosida tahliliy hisobotlar tayyorlash",
     ],
-    bioIntro: "2003–2007-yillarda Farg'ona davlat universitetida, so'ngra O'zbekiston Milliy universiteti magistraturasida tahsil olgan.",
     workHistory: [
       { period: "2002–2003", role: "Farg'ona viloyati Toshloq tumani 1-umumta'lim maktabi laboranti" },
       { period: "2003–2007", role: "Farg'ona davlat universiteti talabasi" },
@@ -128,7 +124,6 @@ export const STRUCTURE_MEMBERS: LeadershipMember[] = [
       "Tadqiqot loyihalari va grantlar bo'yicha ishlarni muvofiqlashtirish",
       "Ilmiy natijalarning amaliyotga tatbiq etilishini nazorat qilish",
     ],
-    bioIntro: "2000–2006-yillarda Nizomiy nomidagi Toshkent davlat pedagogika universitetida bakalavriat va magistraturani tamomlagan.",
     workHistory: [
       { period: "2000–2004", role: "Nizomiy nomidagi Toshkent davlat pedagogika universiteti talabasi" },
       { period: "2003–2004", role: "Toshkent shahar Sergeli tumani 301-maktab o'qituvchisi" },

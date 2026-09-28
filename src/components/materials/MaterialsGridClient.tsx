@@ -5,14 +5,14 @@ import Image from "next/image";
 import clsx from "clsx";
 import { Download, FileText } from "lucide-react";
 import Reveal from "@/components/ui/Reveal";
-import { MATERIALS, MATERIAL_CATEGORIES } from "@/data/materials";
+import { ALL_MATERIALS, MATERIAL_CATEGORIES } from "@/data/materials";
 
 export default function MaterialsGridClient() {
   const [active, setActive] = useState<string>("Barchasi");
 
   const filtered = useMemo(() => {
-    if (active === "Barchasi") return MATERIALS;
-    return MATERIALS.filter((m) => m.category === active);
+    if (active === "Barchasi") return ALL_MATERIALS;
+    return ALL_MATERIALS.filter((m) => m.category === active);
   }, [active]);
 
   return (
@@ -38,13 +38,18 @@ export default function MaterialsGridClient() {
         {filtered.map((item, i) => (
           <Reveal key={item.slug} delay={(i % 3) * 0.06}>
             <div className="flex h-full flex-col overflow-hidden rounded-md border border-line bg-white hover:border-primary-300 transition-colors duration-300">
-              <div className="relative aspect-video w-full overflow-hidden border-b border-line">
+              <div
+                className={clsx(
+                  "relative w-full overflow-hidden border-b border-line",
+                  item.coverAspect === "portrait" ? "aspect-[3/4] bg-slate-50" : "aspect-video"
+                )}
+              >
                 <Image
                   src={item.cover}
                   alt={item.title}
                   fill
                   sizes="(min-width: 1024px) 400px, 90vw"
-                  className="object-cover"
+                  className={item.coverAspect === "portrait" ? "object-contain p-2" : "object-cover"}
                 />
                 <span className="absolute left-3 top-3 rounded bg-primary-950/85 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wide text-white">
                   {item.category}

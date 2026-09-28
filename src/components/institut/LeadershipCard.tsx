@@ -75,8 +75,12 @@ export default function LeadershipCard({ member }: { member: LeadershipMember })
               </ul>
             ) : (
               <div>
-                <p className="text-sm text-slate-600 leading-relaxed">{member.bioIntro}</p>
-                <div className="mt-4 border-t border-line pt-4">
+                {member.bioIntro && (
+                  <p className="text-sm text-slate-600 leading-relaxed mb-4 pb-4 border-b border-line">
+                    {member.bioIntro}
+                  </p>
+                )}
+                <div>
                   <p className="text-xs font-bold uppercase tracking-wider text-primary-700">Mehnat faoliyati</p>
                   <div className="mt-3 grid grid-cols-[auto_1fr] gap-x-4 gap-y-2.5">
                     {member.workHistory.map((row) => (

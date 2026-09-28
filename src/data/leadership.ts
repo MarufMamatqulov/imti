@@ -14,7 +14,9 @@ export type LeadershipMember = {
   fullName: string;
   position: string;
   duties: string[];
-  bioIntro: string;
+  // Ilmiy daraja/unvon kabi qisqa izoh (ixtiyoriy). Mehnat tarixi mavjud
+  // bo'lgan davrlar (jumladan talabalik) workHistory jadvalida keltiriladi.
+  bioIntro?: string;
   workHistory: { period: string; role: string }[];
   receptionDay: string;
   phone: string;

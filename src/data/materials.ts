@@ -1,3 +1,5 @@
+import { BOOKS } from "@/data/books";
+
 export type MaterialFile = {
   label: string;
   path: string;
@@ -11,6 +13,9 @@ export type MaterialItem = {
   description: string;
   category: string;
   cover: string;
+  // "portrait" — kitob sahifasi kabi tik nisbat, sahifa to'liq ko'rinadi
+  // (object-contain). Berilmasa, taqdimotlar uchun odatdagi 16:9 (object-cover).
+  coverAspect?: "video" | "portrait";
   files: MaterialFile[];
 };
 
@@ -21,6 +26,7 @@ export const MATERIAL_CATEGORIES = [
   "Mustaqillik va davlat siyosati",
   "Xalqaro tajriba",
   "Ma'naviy tarbiya",
+  "Kitoblar",
 ] as const;
 
 // Manba: institutning targ'ibot-ma'rifiy materiallar arxivi (2025-2026).
@@ -106,3 +112,7 @@ export const MATERIALS: MaterialItem[] = [
     files: [{ label: "Taqdimot", path: "/materiallar/manaviyat-xonasi.pptx", fileType: "PPTX", fileSize: "5.6 MB" }],
   },
 ];
+
+// Kitoblar/jurnallar — Respublika Ma'naviyat va ma'rifat markazi elektron
+// kutubxonasidan olingan (avtomatik generatsiya qilingan, books.ts'ga qarang).
+export const ALL_MATERIALS: MaterialItem[] = [...MATERIALS, ...BOOKS];
