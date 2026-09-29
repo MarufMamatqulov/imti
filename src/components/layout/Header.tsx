@@ -33,16 +33,16 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50">
       <div className="bg-white border-b border-line">
-        <Container className="flex items-center justify-between gap-4 py-3">
+        <Container className="flex items-center justify-between gap-4 py-2">
           <Link href="/" className="flex items-center gap-3 shrink-0">
-            <span className="relative flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-md border border-line">
-              <Image src="/logo-mark.png" alt={`${SITE.shortName} logotipi`} fill sizes="64px" className="object-contain p-1.5" />
+            <span className="relative flex h-24 w-24 shrink-0 items-center justify-center">
+              <Image src="/logo-mark.png" alt={`${SITE.shortName} logotipi`} fill sizes="96px" className="object-contain" />
             </span>
             <span className="leading-tight">
-              <span className="block text-[15px] sm:text-base font-extrabold uppercase text-primary-950 tracking-tight">
+              <span className="block text-xl sm:text-2xl font-extrabold uppercase text-primary-950 tracking-tight">
                 {SITE.shortName}
               </span>
-              <span className="hidden sm:block text-sm font-semibold text-primary-700 max-w-[280px] leading-snug">
+              <span className="hidden sm:block text-base sm:text-lg font-semibold text-primary-700 leading-snug whitespace-nowrap">
                 Ijtimoiy-ma&apos;naviy tadqiqotlar instituti
               </span>
             </span>

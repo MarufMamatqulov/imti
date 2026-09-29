@@ -1,27 +1,55 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import clsx from "clsx";
-import { Download, FileText } from "lucide-react";
+import { Download, FileText, ChevronLeft, ChevronRight } from "lucide-react";
 import Reveal from "@/components/ui/Reveal";
 import { ALL_MATERIALS, MATERIAL_CATEGORIES } from "@/data/materials";
 
+const PAGE_SIZE = 9;
+
+function paginationRange(current: number, total: number): (number | "...")[] {
+  const items: (number | "...")[] = [];
+  const add = (v: number | "...") => items[items.length - 1] !== v && items.push(v);
+  add(1);
+  if (current - 1 > 2) add("...");
+  for (let p = Math.max(2, current - 1); p <= Math.min(total - 1, current + 1); p++) add(p);
+  if (current + 1 < total - 1) add("...");
+  if (total > 1) add(total);
+  return items;
+}
+
 export default function MaterialsGridClient() {
   const [active, setActive] = useState<string>("Barchasi");
+  const [page, setPage] = useState(1);
+  const topRef = useRef<HTMLDivElement>(null);
 
   const filtered = useMemo(() => {
     if (active === "Barchasi") return ALL_MATERIALS;
     return ALL_MATERIALS.filter((m) => m.category === active);
   }, [active]);
 
+  const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+  const paged = filtered.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
+
+  const selectCategory = (cat: string) => {
+    setActive(cat);
+    setPage(1);
+  };
+
+  const goToPage = (p: number) => {
+    setPage(Math.min(Math.max(1, p), totalPages));
+    topRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   return (
     <div>
-      <div className="flex flex-wrap gap-2.5 mb-10">
+      <div ref={topRef} className="flex flex-wrap gap-2.5 mb-10 scroll-mt-28">
         {MATERIAL_CATEGORIES.map((cat) => (
           <button
             key={cat}
-            onClick={() => setActive(cat)}
+            onClick={() => selectCategory(cat)}
             className={clsx(
               "rounded-sm px-4 py-2 text-sm font-semibold transition-colors border",
               active === cat
@@ -35,7 +63,7 @@ export default function MaterialsGridClient() {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filtered.map((item, i) => (
+        {paged.map((item, i) => (
           <Reveal key={item.slug} delay={(i % 3) * 0.06}>
             <div className="flex h-full flex-col overflow-hidden rounded-md border border-line bg-white hover:border-primary-300 transition-colors duration-300">
               <div
@@ -83,6 +111,50 @@ export default function MaterialsGridClient() {
         <p className="flex items-center justify-center gap-2 py-16 text-center text-slate-500">
           <FileText className="h-4 w-4" /> Ushbu bo&apos;limda hozircha material mavjud emas.
         </p>
+      )}
+
+      {totalPages > 1 && (
+        <div className="mt-10 flex items-center justify-center gap-1.5">
+          <button
+            onClick={() => goToPage(page - 1)}
+            disabled={page === 1}
+            aria-label="Oldingi sahifa"
+            className="flex h-9 w-9 items-center justify-center rounded-sm border border-line text-slate-600 hover:border-primary-300 hover:text-primary-700 disabled:opacity-40 disabled:pointer-events-none transition-colors"
+          >
+            <ChevronLeft className="h-4 w-4" />
+          </button>
+
+          {paginationRange(page, totalPages).map((p, i) =>
+            p === "..." ? (
+              <span key={`ellipsis-${i}`} className="px-2 text-sm text-slate-400">
+                …
+              </span>
+            ) : (
+              <button
+                key={p}
+                onClick={() => goToPage(p)}
+                aria-current={p === page ? "page" : undefined}
+                className={clsx(
+                  "flex h-9 w-9 items-center justify-center rounded-sm border text-sm font-semibold transition-colors",
+                  p === page
+                    ? "bg-primary-900 text-white border-primary-900"
+                    : "bg-white text-slate-600 border-line hover:border-primary-300 hover:text-primary-700"
+                )}
+              >
+                {p}
+              </button>
+            )
+          )}
+
+          <button
+            onClick={() => goToPage(page + 1)}
+            disabled={page === totalPages}
+            aria-label="Keyingi sahifa"
+            className="flex h-9 w-9 items-center justify-center rounded-sm border border-line text-slate-600 hover:border-primary-300 hover:text-primary-700 disabled:opacity-40 disabled:pointer-events-none transition-colors"
+          >
+            <ChevronRight className="h-4 w-4" />
+          </button>
+        </div>
       )}
     </div>
   );
