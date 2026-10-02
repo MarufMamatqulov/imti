@@ -72,8 +72,21 @@ export async function POST(req: Request) {
     if (!res.ok) {
       const detail = await res.text();
       console.error("Telegram sendMessage failed:", res.status, detail);
+      // Telegram's `description` isn't sensitive (no token in it) and is the
+      // fastest way to spot a misconfigured chat_id/bot without digging
+      // through Vercel function logs.
+      let description = "";
+      try {
+        description = JSON.parse(detail)?.description || "";
+      } catch {
+        // ignore parse failure, fall back to generic message
+      }
       return Response.json(
-        { error: "Murojaatni yuborib bo'lmadi. Birozdan so'ng qayta urinib ko'ring." },
+        {
+          error: description
+            ? `Murojaatni yuborib bo'lmadi: ${description}`
+            : "Murojaatni yuborib bo'lmadi. Birozdan so'ng qayta urinib ko'ring.",
+        },
         { status: 502 }
       );
     }
