@@ -14,12 +14,14 @@ type ButtonAsLink = CommonProps & {
   href: string;
   onClick?: never;
   type?: never;
+  disabled?: never;
 };
 
 type ButtonAsButton = CommonProps & {
   href?: never;
   onClick?: () => void;
   type?: "button" | "submit";
+  disabled?: boolean;
 };
 
 type Props = ButtonAsLink | ButtonAsButton;
@@ -51,6 +53,7 @@ export default function Button({
   href,
   onClick,
   type = "button",
+  disabled,
 }: Props) {
   const classes = clsx(base, variants[variant], sizes[size], className);
 
@@ -64,7 +67,7 @@ export default function Button({
   }
 
   return (
-    <button type={type} onClick={onClick} className={classes}>
+    <button type={type} onClick={onClick} disabled={disabled} className={classes}>
       {children}
       {icon}
     </button>

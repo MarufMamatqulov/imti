@@ -1,19 +1,46 @@
 "use client";
 
 import { FormEvent, useState } from "react";
-import { Send, CheckCircle2, Loader2 } from "lucide-react";
+import { Send, CheckCircle2, Loader2, AlertCircle } from "lucide-react";
 import Button from "@/components/ui/Button";
 
 export default function ContactForm() {
-  const [status, setStatus] = useState<"idle" | "loading" | "sent">("idle");
+  const [status, setStatus] = useState<"idle" | "loading" | "sent" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const form = e.currentTarget;
+    const data = new FormData(form);
+
     setStatus("loading");
-    setTimeout(() => {
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          fullName: data.get("fullName"),
+          phone: data.get("phone"),
+          email: data.get("email"),
+          subject: data.get("subject"),
+          message: data.get("message"),
+          website: data.get("website"), // honeypot
+        }),
+      });
+
+      if (!res.ok) {
+        const body = await res.json().catch(() => ({}));
+        setErrorMessage(body.error || "Murojaatni yuborib bo'lmadi. Birozdan so'ng qayta urinib ko'ring.");
+        setStatus("error");
+        return;
+      }
+
       setStatus("sent");
-      e.currentTarget.reset();
-    }, 900);
+      form.reset();
+    } catch {
+      setErrorMessage("Internet aloqasini tekshirib, qayta urinib ko'ring.");
+      setStatus("error");
+    }
   };
 
   if (status === "sent") {
@@ -38,10 +65,17 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+      {/* Honeypot: hidden from real users via CSS, bots tend to fill every field */}
+      <div className="hidden" aria-hidden="true">
+        <label htmlFor="website">Veb-sayt</label>
+        <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
+      </div>
+
       <div>
         <label className="block text-sm font-semibold text-primary-950 mb-1.5">Ism va familiya *</label>
         <input
           required
+          name="fullName"
           type="text"
           placeholder="Ismingizni kiriting"
           className="w-full rounded-md border border-line px-4 py-3 text-sm outline-none transition-colors focus:border-primary-400 focus:ring-2 focus:ring-primary-100"
@@ -51,6 +85,7 @@ export default function ContactForm() {
         <label className="block text-sm font-semibold text-primary-950 mb-1.5">Telefon raqam *</label>
         <input
           required
+          name="phone"
           type="tel"
           placeholder="+998 90 123 45 67"
           className="w-full rounded-md border border-line px-4 py-3 text-sm outline-none transition-colors focus:border-primary-400 focus:ring-2 focus:ring-primary-100"
@@ -59,6 +94,7 @@ export default function ContactForm() {
       <div className="sm:col-span-2">
         <label className="block text-sm font-semibold text-primary-950 mb-1.5">Elektron pochta</label>
         <input
+          name="email"
           type="email"
           placeholder="email@example.com"
           className="w-full rounded-md border border-line px-4 py-3 text-sm outline-none transition-colors focus:border-primary-400 focus:ring-2 focus:ring-primary-100"
@@ -68,6 +104,7 @@ export default function ContactForm() {
         <label className="block text-sm font-semibold text-primary-950 mb-1.5">Murojaat mavzusi *</label>
         <select
           required
+          name="subject"
           defaultValue=""
           className="w-full rounded-md border border-line px-4 py-3 text-sm outline-none transition-colors focus:border-primary-400 focus:ring-2 focus:ring-primary-100 text-slate-600"
         >
@@ -85,16 +122,26 @@ export default function ContactForm() {
         <label className="block text-sm font-semibold text-primary-950 mb-1.5">Xabar matni *</label>
         <textarea
           required
+          name="message"
           rows={5}
           placeholder="Murojaatingiz mazmunini batafsil yozing..."
           className="w-full rounded-md border border-line px-4 py-3 text-sm outline-none transition-colors focus:border-primary-400 focus:ring-2 focus:ring-primary-100 resize-none"
         />
       </div>
+
+      {status === "error" && (
+        <div className="sm:col-span-2 flex items-start gap-2.5 rounded-md border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+          <AlertCircle className="h-4 w-4 shrink-0 mt-0.5" />
+          {errorMessage}
+        </div>
+      )}
+
       <div className="sm:col-span-2">
         <Button
           type="submit"
           size="lg"
           className="w-full sm:w-auto"
+          disabled={status === "loading"}
           icon={
             status === "loading" ? (
               <Loader2 className="h-4 w-4 animate-spin" />
