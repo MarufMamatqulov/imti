@@ -7,7 +7,6 @@ const staticRoutes = [
   "/institut",
   "/institut/rahbariyat",
   "/institut/tuzilma",
-  "/institut/vakansiya",
   "/faoliyat",
   "/ilmiy-faoliyat",
   "/yangiliklar",

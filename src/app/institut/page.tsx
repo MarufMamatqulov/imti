@@ -59,7 +59,6 @@ const timeline = [
 const links = [
   { title: "Rahbariyat", href: "/institut/rahbariyat", text: "Institut rahbariyati va qabul kunlari", icon: Landmark },
   { title: "Tarkibiy bo'linmalar", href: "/institut/tuzilma", text: "Bo'lim rahbarlari va aloqa ma'lumotlari", icon: Target },
-  { title: "Vakansiyalar", href: "/institut/vakansiya", text: "Bo'sh ish o'rinlari va talablar", icon: HeartHandshake },
 ];
 
 export default function InstitutPage() {
@@ -159,7 +158,7 @@ export default function InstitutPage() {
 
       <section className="py-20 sm:py-28 bg-slate-50">
         <Container>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
             {links.map((link, i) => (
               <Reveal key={link.href} delay={i * 0.1}>
                 <Link
