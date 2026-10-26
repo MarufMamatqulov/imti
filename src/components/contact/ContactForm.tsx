@@ -1,12 +1,28 @@
 "use client";
 
 import { FormEvent, useState } from "react";
-import { Send, CheckCircle2, Loader2, AlertCircle } from "lucide-react";
+import { Send, CheckCircle2, Loader2, AlertCircle, Clock } from "lucide-react";
 import Button from "@/components/ui/Button";
+import { CONTACT_FORM_ENABLED } from "@/lib/site-status";
 
 export default function ContactForm() {
   const [status, setStatus] = useState<"idle" | "loading" | "sent" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
+
+  if (!CONTACT_FORM_ENABLED) {
+    return (
+      <div className="flex flex-col items-center justify-center text-center py-14 px-6">
+        <span className="flex h-16 w-16 items-center justify-center rounded-full bg-amber-50 text-amber-600 mb-5">
+          <Clock className="h-8 w-8" />
+        </span>
+        <h3 className="text-lg font-bold text-primary-950">Murojaatlar vaqtincha qabul qilinmayapti</h3>
+        <p className="mt-2 text-sm text-slate-500 max-w-sm">
+          Sayt hozirda test rejimida ishlamoqda. Shakl tez orada ishga tushadi — hozircha yuqoridagi telefon yoki
+          elektron pochta orqali murojaat qilishingiz mumkin.
+        </p>
+      </div>
+    );
+  }
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();

@@ -16,6 +16,7 @@ import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import { NAV_ITEMS } from "@/data/nav";
 import { SITE, LANGUAGES } from "@/data/site";
+import { TEST_MODE, CONTACT_FORM_ENABLED } from "@/lib/site-status";
 
 export default function Header() {
   const pathname = usePathname();
@@ -32,6 +33,11 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50">
+      {TEST_MODE && (
+        <div className="bg-amber-400 text-amber-950 text-center text-xs sm:text-sm font-semibold py-1.5 px-4">
+          Sayt test rejimida ishlamoqda
+        </div>
+      )}
       <div className="bg-white border-b border-line">
         <Container className="flex items-center justify-between gap-4 py-2">
           <Link href="/" className="flex items-center gap-3 shrink-0">
@@ -164,9 +170,11 @@ export default function Header() {
             })}
           </nav>
 
-          <Button href="/aloqa" size="sm" className="my-2 shrink-0">
-            Murojaat qilish
-          </Button>
+          {CONTACT_FORM_ENABLED && (
+            <Button href="/aloqa" size="sm" className="my-2 shrink-0">
+              Murojaat qilish
+            </Button>
+          )}
         </Container>
       </div>
 
@@ -218,9 +226,11 @@ export default function Header() {
               )}
             </div>
           ))}
-          <Button href="/aloqa" className="mt-4 w-full">
-            Murojaat qilish
-          </Button>
+          {CONTACT_FORM_ENABLED && (
+            <Button href="/aloqa" className="mt-4 w-full">
+              Murojaat qilish
+            </Button>
+          )}
         </Container>
       </div>
     </header>
